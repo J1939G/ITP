@@ -1,0 +1,18 @@
+{
+  "src_folder": "theme",
+  "dist_folder": "public/assets",
+  "styles": [
+    "theme/styles/home.css"
+  ],
+  "images": [
+    "theme/images/**/*.{jpg,png,gif}"
+  ],
+  "watch": [
+    "theme/**/*.{latte,php,html}"
+  ],
+  "hooks": {
+    "init": "mango install"
+  },
+  "snippet": "yes please",
+  "version": ">=0.24"
+}
