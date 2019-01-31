@@ -1,0 +1,12 @@
+{
+    "name": "ich/ich",
+    "type": "Project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose",
+            "email": "jgredonsky@gmail.com"
+        }
+    ],
+    "require": {}
+}
