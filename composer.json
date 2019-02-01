@@ -2,6 +2,7 @@
     "name": "ich/ich",
     "type": "Project",
     "license": "MIT",
+    "description": "IT Project, a photography portfolio",
     "authors": [
         {
             "name": "Jose",
