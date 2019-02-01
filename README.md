@@ -1,4 +1,4 @@
 # ITP
-IT Project
+IT Project (Codename: Pittsburg)
 
 My personal photography portfolio
