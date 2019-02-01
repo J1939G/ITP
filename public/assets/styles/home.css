@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Sans+Pro:900|Open+Sans:800|Major+Mono+Display');
 body {
   padding: 0px;
   border: 0px;
@@ -20,7 +20,8 @@ body {
   text-align: center;
   margin: 0px;
   font-size: 6em;
-  font-weight: 800;
+  font-weight: 900;
+  text-transform: uppercase;
   letter-spacing: 0.125em;
   user-select: none;
 }
@@ -41,6 +42,7 @@ body {
   line-height: 15vh;
   text-align: center;
   font-size: 3.5em;
+  text-transform: uppercase;
   font-weight: 800;
   transition: all 0.2s ease-in-out;
 }
@@ -83,7 +85,8 @@ body {
     margin-top: 16.66666667vh;
   }
   #title {
-    font-size: 4em;
+    font-size: 5em;
+    letter-spacing: 0.2em;
     height: 33.33333333vh;
     line-height: 33.33333333vh;
   }
