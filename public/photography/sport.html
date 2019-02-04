@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/styles/sport.css">
+    <title>Sport</title>
+    <script>
+        
+    window.onload = function(){const height = document.getElementById("context").getBoundingClientRect().height};
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if( document.body.scrollTop  > 5 ){
+            document.getElementById('context').style.fontSize = "0.5em";
+            document.getElementById('arrow').style.fontSize = "0.5rem";
+            document.getElementById('backdrop').style.top = "-4rem";
+        } else {
+            document.getElementById('context').style.fontSize = "1em";
+            document.getElementById('arrow').style.fontSize = "1rem";
+            document.getElementById('backdrop').style.top = "-5rem";
+        }
+    }
+
+        function menu(id){
+            item = document.getElementById(id);
+            if( item.style.height != "100vh" ){
+                item.style.height = "100vh";
+                document.getElementById('backdrop').style.transform = "scale(0.8)";
+                document.getElementById('arrow').style.transform = "rotate(180deg)";
+                document.getElementById('context').style.fontSize = "1em";
+            }
+            else {
+                item.style.height = "5em";
+                document.getElementById('backdrop').style.transform = "scale(1)";
+                document.getElementById('arrow').style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="context">
+        <h1>Sport</h1>
+        <div onclick="menu('context')" id="arrow"></div>
+        <img id="backdrop" src="../assets/images/sport.jpg" alt="sport">
+        <div id="navLinks">
+            <a href="../jose.html">About me</a>
+            <a href="photography.html">Photography</a>
+            <a href="../stories.html">Stories</a>
+            <a href="../contact.html">Contact</a>
+        </div>
+    </div>
+    <div id="container">
+        <div><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p></div>
+        <div><img src="../assets/images/sport.jpg" alt="sport"></div>
+        <div><img src="../assets/images/sport.jpg"></div>
+        <div><p>Capturing<br> an<br> instant</p></div>
+        <div><img src="../assets/images/sport.jpg"></div>
+        <div><p>Alphabet Village and the subline of her own road.</p></div>
+        <div><img src="../assets/images/sport.jpg"></div>
+        <div id="copyright">
+            <a href="https:/github.com/j1939g/pittsburg">GitHub</a><p>© 2019 José Smutný</p>
+        </div>
+    </div>
+</body>
+</html>
