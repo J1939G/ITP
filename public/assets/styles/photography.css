@@ -36,30 +36,14 @@ body {
   line-height: 33.33333333vh;
   transition: all 0.4s ease-in-out;
 }
-.cat a:hover {
-  transform: scale(1.2);
-}
-.cat a:hover ~ img {
-  filter: blur(0.15em);
-}
-/*
-#first a {
-    background-color: rgba(0,0,200,0.3);
-}
-#second a {
-    background-color: rgba(55,200,0,0.3);
-}
-#third a {
-    background-color: rgba(200,0,0,0.3);
-}
-*/
 img {
   display: block;
   position: absolute;
   width: 110%;
   margin: 0px;
   left: -5%;
-  bottom: -5%;
+  top: 55%;
+  transform: translate(0, -55%);
   z-index: -1;
   height: auto;
   transition: all 0.4s ease-in-out;
@@ -72,9 +56,11 @@ img {
 }
 @media only screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 3/2) {
   img {
-    height: 100%;
+    height: 110%;
+    left: -5%;
+    top: 55%;
+    transform: translate(0, -55%);
     width: auto;
-    bottom: 0px;
   }
   #container {
     grid-template-areas: "left rightTop" "left rightBottom";
@@ -109,5 +95,11 @@ img {
     height: auto;
     top: 50%;
     transform: translate(0, -50%);
+  }
+  .cat a:hover {
+    transform: scale(1.2);
+  }
+  .cat a:hover ~ img {
+    filter: blur(0.15em);
   }
 }
