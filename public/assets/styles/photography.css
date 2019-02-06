@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Sans+Pro:900|Open+Sans:800|Major+Mono+Display');
+@font-face {
+  font-family: SSPB;
+  src: url("../fonts/SSPB.ttf");
+}
 body {
   margin: 0px;
   padding: 0px;
   border: 0px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: SSPB, sans-serif;
 }
 #container {
   position: fixed;
@@ -30,7 +33,6 @@ body {
   text-decoration: none;
   color: black;
   margin: 0px;
-  font-weight: 900;
   width: 100%;
   height: 100%;
   line-height: 33.33333333vh;
