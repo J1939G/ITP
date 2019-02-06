@@ -5,50 +5,57 @@
     <link rel="stylesheet" href="../assets/styles/sport.css">
     <title>Sport</title>
     <script>
-        
-    window.onscroll = function() {scrollFunction()};
-    function scrollFunction() {
-        if( document.body.scrollTop  > 5 ){
-            document.getElementById('context').style.fontSize = "0.5em";
-            document.getElementById('arrow').style.fontSize = "0.5rem";
-            document.getElementById('backdrop').style.top = "-4rem";
-        } else {
-            document.getElementById('context').style.fontSize = "1em";
-            document.getElementById('arrow').style.fontSize = "1rem";
-            document.getElementById('backdrop').style.top = "-5rem";
+            
+        window.onscroll = function() {scrollFunction()};
+
+        function gebi(id){
+            return document.getElementById(id).style;
         }
-        textBlockF = document.querySelector('#container div:nth-child(4)');
-        textBlockS = document.querySelector('#container div:nth-child(6)');
-        textBlockC = document.getElementById('copyright');
-        if( (textBlockF.getBoundingClientRect().top) < document.body.clientHeight){
-            textBlockF.childNodes[0].style.color='black';
+
+        function scrollFunction() {
+            if( document.body.scrollTop  > 5 ){
+                gebi('context').fontSize = "0.5em";
+                gebi('arrow').fontSize = "0.5rem";
+                gebi('backdrop').top = "-4rem";
+            } else {
+                gebi('context').fontSize = "1em";
+                gebi('arrow').fontSize = "1rem";
+                gebi('backdrop').top = "-5rem";
+            }
+            textBlockF = document.querySelector('#container div:nth-child(4)');
+            textBlockS = document.querySelector('#container div:nth-child(6)');
+            if( (textBlockF.getBoundingClientRect().top) < document.body.clientHeight){
+                textBlockF.childNodes[0].style.color='black';
+                textBlockF.childNodes[0].style.transform='scale(1)';
+            }
+            if( (textBlockS.getBoundingClientRect().top) < document.body.clientHeight){
+                textBlockS.childNodes[0].style.color='black';
+                textBlockS.childNodes[0].style.transform='scale(1)';
+            }
         }
-        if( (textBlockS.getBoundingClientRect().top) < document.body.clientHeight){
-            textBlockS.childNodes[0].style.color='black';
-        }
-        if( (textBlockC.getBoundingClientRect().top - (textBlockS.getBoundingClientRect().height * 1.5)) < document.body.clientHeight){
-            textBlockC.childNodes[0].style.color='black';
-            textBlockC.childNodes[1].style.color='black';
-        }
-    }
 
         function menu(id){
             item = document.getElementById(id);
             if( item.style.height != "100vh" ){
                 item.style.height = "100vh";
-                document.getElementById('backdrop').style.transform = "scale(0.8)";
-                document.getElementById('arrow').style.transform = "rotate(180deg)";
-                document.getElementById('context').style.fontSize = "1em";
+                gebi('backdrop').transform = "scale(0.8)";
+                gebi('arrow').transform = "rotate(180deg)";
+                gebi('context').fontSize = "1em";
             }
             else {
                 item.style.height = "5em";
-                document.getElementById('backdrop').style.transform = "scale(1)";
-                document.getElementById('arrow').style.transform = "rotate(0deg)";
+                gebi('backdrop').transform = "scale(1)";
+                gebi('arrow').transform = "rotate(0deg)";
             }
+        }
+
+        function appear() {
+            document.querySelector('#container div:nth-child(1)').childNodes[0].style.color='black'; 
+            document.querySelector('#container div:nth-child(1)').childNodes[0].style.transform='scale(1)';
         }
     </script>
 </head>
-<body onload="document.querySelector('#container div:nth-child(1)').childNodes[0].style.color='black'">
+<body onload="appear()">
     <div id="context">
         <h1>Sport</h1>
         <div onclick="menu('context')" id="arrow"></div>
@@ -61,16 +68,16 @@
         </div>
     </div>
     <div id="container">
-        <div><p>An active expression of life. Strength, skills and experience all combined to form powerfull images</p></div>
+        <div><p>An active expression of life. <br>Strength, skills and experience all combined to form powerfull images</p></div>
         <div><img src="../assets/images/sport/kyte.jpg" alt="sport"></div>
         <div><img src="../assets/images/sport/bike.jpg"></div>
         <div><p>Action<br>captured<br>as it happens</p></div>
-        <div><img src="../assets/images/sport.jpg"></div>
+        <div><img src="../assets/images/sport/climb.jpg"></div>
         <div><p>The right place,<br> and the<br>precise moment</p></div>
         <div><img src="../assets/images/sport/canoe.jpg"></div>
         <div id="copyright">
             <a href="https:/github.com/j1939g/pittsburg">GitHub</a><p>© 2019 José Smutný</p>
         </div>
-    </div>
+    </div>  
 </body>
 </html>
