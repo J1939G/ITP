@@ -1,28 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>ich</title>
+		<title>José Smutný photography</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="assets/styles/home.css"/>
 		<script>
 			function changer(id){
-				if( document.getElementById(id).innerHTML == "J. G. R. S."){
-					document.getElementById(id).innerHTML = "Jose Smutny";
+				title = document.getElementById(id);
+				if( title.innerHTML == "J. G. R. S."){
+					title.innerHTML = "José Smutný";
 				}
 				else {
-					document.getElementById(id).innerHTML = "J. G. R. S.";
+					title.innerHTML = "J. G. R. S.";
 				}
 			}
 		</script>
 	</head>
 	<body>
 		<div id="content">
-			<h1 onclick="changer(this.id)" id="title">Jose Smutny</h1>
+			<h1 onclick="changer(this.id)" id="title">José Smutný</h1>
 			<a href="jose/jose.html">About me</a>
 			<a href="photography/photography.html">Photos</a>
-			<a href="stories/stories.html">Stories</a>
+			<a href="stories/">Stories</a>
 			<a href="contact.html">Contact</a>
 			<div id="background">
-				<img src="assets/images/home-background.jpg" alt="forest"/>
+				<img src="assets/images/home-background.jpg" alt="photography of snowy forest"/>
 			</div>	
 		</div>
 	</body>
