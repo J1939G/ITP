@@ -6,7 +6,6 @@
     <title>Sport</title>
     <script>
         
-    window.onload = function(){const height = document.getElementById("context").getBoundingClientRect().height};
     window.onscroll = function() {scrollFunction()};
     function scrollFunction() {
         if( document.body.scrollTop  > 5 ){
@@ -17,6 +16,19 @@
             document.getElementById('context').style.fontSize = "1em";
             document.getElementById('arrow').style.fontSize = "1rem";
             document.getElementById('backdrop').style.top = "-5rem";
+        }
+        textBlockF = document.querySelector('#container div:nth-child(4)');
+        textBlockS = document.querySelector('#container div:nth-child(6)');
+        textBlockC = document.getElementById('copyright');
+        if( (textBlockF.getBoundingClientRect().top) < document.body.clientHeight){
+            textBlockF.childNodes[0].style.color='black';
+        }
+        if( (textBlockS.getBoundingClientRect().top) < document.body.clientHeight){
+            textBlockS.childNodes[0].style.color='black';
+        }
+        if( (textBlockC.getBoundingClientRect().top - (textBlockS.getBoundingClientRect().height * 1.5)) < document.body.clientHeight){
+            textBlockC.childNodes[0].style.color='black';
+            textBlockC.childNodes[1].style.color='black';
         }
     }
 
@@ -36,7 +48,7 @@
         }
     </script>
 </head>
-<body>
+<body onload="document.querySelector('#container div:nth-child(1)').childNodes[0].style.color='black'">
     <div id="context">
         <h1>Sport</h1>
         <div onclick="menu('context')" id="arrow"></div>
@@ -49,13 +61,13 @@
         </div>
     </div>
     <div id="container">
-        <div><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p></div>
-        <div><img src="../assets/images/sport.jpg" alt="sport"></div>
+        <div><p>An active expression of life. Strength, skills and experience all combined to form powerfull images</p></div>
+        <div><img src="../assets/images/sport/kyte.jpg" alt="sport"></div>
+        <div><img src="../assets/images/sport/bike.jpg"></div>
+        <div><p>Action<br>captured<br>as it happens</p></div>
         <div><img src="../assets/images/sport.jpg"></div>
-        <div><p>Capturing<br> an<br> instant</p></div>
-        <div><img src="../assets/images/sport.jpg"></div>
-        <div><p>Alphabet Village and the subline of her own road.</p></div>
-        <div><img src="../assets/images/sport.jpg"></div>
+        <div><p>The right place,<br> and the<br>precise moment</p></div>
+        <div><img src="../assets/images/sport/canoe.jpg"></div>
         <div id="copyright">
             <a href="https:/github.com/j1939g/pittsburg">GitHub</a><p>© 2019 José Smutný</p>
         </div>
