@@ -22,6 +22,8 @@ body {
     height: 5em;
     top: 0px;
     left: 0px;
+    z-index: 10;
+    text-transform: uppercase;
     overflow: hidden;
     transition: all 0.6s ease-in-out;
     h1 {
@@ -37,7 +39,6 @@ body {
         width: 4em;
         height: 4em;
         background-image: url("../images/menu_arrow.svg");
-        background-size: 100%;
         background-size: 4em;
         display: block;
         transition: all 0.6s ease-in-out;
@@ -75,13 +76,15 @@ body {
 .text_style {
     padding: 1rem 2rem;
     line-height: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    background-color: white;
     p {
         font-family: SSPR;
         font-weight: 800;
         letter-spacing: 1px;
+        transform: scale(0.8);
         color: white;
-        transition: all 1.5s ease-in-out 1.5s;
+        transition: all 1.5s ease-in-out 0.8s;
     }
 }
 
@@ -98,8 +101,6 @@ body {
     }
     & div:nth-child(1){
         grid-area: greetText;
-        //background-color: #bbb;
-        background-color: white;
         .text_style;
         padding-top: 6rem;
     }
@@ -108,14 +109,8 @@ body {
     }
     & div:nth-child(3){
         padding: 2rem 0px;
-        //background-color: #333;
-        background-color: white;
     }
     & div:nth-child(4){
-        //background-color: #333;
-        background-color: white;
-        //color: rgb(184, 184, 184);
-        color: black;
         align-self: center;
         .text_style;
         padding: 2rem;
@@ -128,8 +123,6 @@ body {
     }
     & div:nth-child(6){
         grid-area: bottom;
-        //background-color: rgb(173, 173, 173);
-        background-color: white;
         .text_style;
         padding: 2rem;
         p {
@@ -147,7 +140,7 @@ body {
         .text_style;
         font-size: 1em;
         a {
-            color: white;
+            color: black;
             flex-basis: auto;
             display: inline-block;
         }
@@ -158,7 +151,8 @@ body {
         p {
             flex-basis: auto;
             display: inline-block;
-            color: white;
+            transform: scale(1);
+            color: black;
         }
     }
 }
