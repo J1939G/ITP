@@ -9,5 +9,7 @@
             "email": "jgredonsky@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "wordpress/wordpress": "*"        
+    }
 }
