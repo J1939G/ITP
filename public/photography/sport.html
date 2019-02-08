@@ -5,75 +5,66 @@
     <link rel="stylesheet" href="../assets/styles/sport.css">
     <title>Sport</title>
     <script>
-            
         window.onscroll = function() {scrollFunction()};
-
         function gebi(id){
             return document.getElementById(id).style;
         }
-
+        function makeAppear(child){
+            item = document.querySelector('#container div:nth-child(' + child + ')');
+            if( (item.getBoundingClientRect().top) < document.body.clientHeight){
+                item.childNodes[0].style.color='black';
+                item.childNodes[0].style.transform='scale(1)';
+            }
+        }
         function scrollFunction() {
             if( document.body.scrollTop  > 5 ){
                 gebi('context').fontSize = "0.5em";
                 gebi('arrow').fontSize = "0.5rem";
-                gebi('backdrop').top = "-4rem";
             } else {
                 gebi('context').fontSize = "1em";
                 gebi('arrow').fontSize = "1rem";
-                gebi('backdrop').top = "-5rem";
             }
-            textBlockF = document.querySelector('#container div:nth-child(4)');
-            textBlockS = document.querySelector('#container div:nth-child(6)');
-            if( (textBlockF.getBoundingClientRect().top) < document.body.clientHeight){
-                textBlockF.childNodes[0].style.color='black';
-                textBlockF.childNodes[0].style.transform='scale(1)';
-            }
-            if( (textBlockS.getBoundingClientRect().top) < document.body.clientHeight){
-                textBlockS.childNodes[0].style.color='black';
-                textBlockS.childNodes[0].style.transform='scale(1)';
-            }
+            makeAppear(1);
+            makeAppear(5);
+            makeAppear(7);
         }
-
         function menu(id){
             item = document.getElementById(id);
             if( item.style.height != "100vh" ){
                 item.style.height = "100vh";
-                gebi('backdrop').transform = "scale(0.8)";
                 gebi('arrow').transform = "rotate(180deg)";
                 gebi('context').fontSize = "1em";
+                gebi('arrow').fontSize = "1em";
             }
             else {
                 item.style.height = "5em";
-                gebi('backdrop').transform = "scale(1)";
                 gebi('arrow').transform = "rotate(0deg)";
             }
         }
-
-        function appear() {
-            document.querySelector('#container div:nth-child(1)').childNodes[0].style.color='black'; 
-            document.querySelector('#container div:nth-child(1)').childNodes[0].style.transform='scale(1)';
-        }
     </script>
 </head>
-<body onload="appear()">
+<body >
     <div id="context">
         <h1>Sport</h1>
         <div onclick="menu('context')" id="arrow"></div>
-        <img id="backdrop" src="../assets/images/sport.jpg" alt="sport">
         <div id="navLinks">
             <a href="../jose.html">About me</a>
-            <a href="photography.html">Photography</a>
+            <div id="photography">
+                <p>Photography</p>
+                <a href="nature.html">Nature</a>
+                <a href="portrait.html">Portrait</a></div>
             <a href="../stories.html">Stories</a>
             <a href="../contact.html">Contact</a>
         </div>
     </div>
     <div id="container">
+        <div id="text"><p>Lorem ipsum dolor sit amet, huic ergo parce Deo, piu Jesu Jesu domine</p></div>
         <div><p>An active expression of life. <br>Strength, skills and experience all combined to form powerfull images</p></div>
-        <div><img src="../assets/images/sport/kyte.jpg" alt="sport"></div>
+        <div><img onload="makeAppear(2)" src="../assets/images/sport/kyte.jpg" alt="sport"></div>
         <div><img src="../assets/images/sport/bike.jpg"></div>
-        <div><p>Action<br>captured<br>as it happens</p></div>
+        <div><p>Action <br>captured <br>as it happens </p></div>
         <div><img src="../assets/images/sport/climb.jpg"></div>
-        <div><p>The right place,<br> and the<br>precise moment</p></div>
+        <div><p>The right place,<br> and the <br>precise moment</p></div>
         <div><img src="../assets/images/sport/canoe.jpg"></div>
         <div id="copyright">
             <a href="https:/github.com/j1939g/pittsburg">GitHub</a><p>© 2019 José Smutný</p>

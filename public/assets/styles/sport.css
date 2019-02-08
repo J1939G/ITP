@@ -12,11 +12,14 @@ body {
   border: 0px;
   font-family: SSPB, sans-serif;
 }
+img {
+  pointer-events: none !important;
+}
 #context {
   position: fixed;
   text-align: center;
   background-color: white;
-  width: 100vw;
+  width: 100%;
   height: 5em;
   top: 0px;
   left: 0px;
@@ -28,17 +31,19 @@ body {
 #context h1 {
   line-height: 1.25em;
   font-size: 4em;
-  margin: 0px;
+  margin-top: 0px;
+  position: relative;
+  background-image: url(../images/sport/sport_header.jpg);
 }
 #context #arrow {
   position: absolute;
   font-size: 1rem;
-  top: 0.5em;
-  right: 0.5em;
-  width: 4em;
-  height: 4em;
+  top: 0em;
+  right: 0em;
+  width: 5em;
+  height: 5em;
   background-image: url("../images/menu_arrow.svg");
-  background-size: 4em;
+  background-size: 5em;
   display: block;
   transition: all 0.6s ease-in-out;
 }
@@ -47,9 +52,10 @@ body {
   height: 70vh;
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: flex-start;
 }
-#context a {
+#context a,
+#context p {
   flex-basis: 100%;
   display: block;
   position: relative;
@@ -60,18 +66,34 @@ body {
   text-decoration: none;
   color: black;
 }
-#context img {
-  z-index: -1;
-  position: absolute;
-  width: 130%;
-  top: -5rem;
-  left: -15%;
-  filter: blur(8px);
-  height: auto;
-  transition: all 0.6s ease-in-out;
+#context #photography {
+  z-index: 15;
+  line-height: 12vh;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 12vh;
+  align-items: flex-start;
+  overflow: hidden;
+  transition: 0.6s all ease-in-out;
+}
+#context #photography p {
+  margin: 0px;
+  line-height: 12vh;
+  font-size: 2.4rem;
+}
+#context #photography a {
+  line-height: 8vh;
+  height: 8vh;
+  flex-basis: 100%;
+  font-size: 2rem;
+}
+#context #photography:hover {
+  height: 36vh;
+  transition: 0.6s all ease-in-out;
 }
 .text_style {
-  padding: 1rem 2rem;
+  padding: 0px 3rem;
   line-height: 2rem;
   font-size: 1.5rem;
   background-color: white;
@@ -80,7 +102,9 @@ body {
   font-family: SSPR;
   font-weight: 800;
   letter-spacing: 1px;
+  padding: 0px;
   transform: scale(0.8);
+  margin: 0px;
   color: white;
   transition: all 1.5s ease-in-out 0.8s;
 }
@@ -90,6 +114,7 @@ body {
   display: grid;
   grid-template-areas: "greetText greetText" "greeter greeter" "leftT rightT" "center center" "bottom bottom" "closing closing" "cr cr";
   grid-template-columns: 50vw 50vw;
+  grid-row-gap: 2rem;
 }
 #container img {
   width: 100%;
@@ -97,87 +122,109 @@ body {
   padding: 0px;
 }
 #container div:nth-child(1) {
-  grid-area: greetText;
-  padding: 1rem 2rem;
+  display: none;
+  padding: 0px 3rem;
   line-height: 2rem;
   font-size: 1.5rem;
   background-color: white;
-  padding-top: 6rem;
 }
 #container div:nth-child(1) p {
   font-family: SSPR;
   font-weight: 800;
   letter-spacing: 1px;
+  padding: 0px;
   transform: scale(0.8);
+  margin: 0px;
   color: white;
   transition: all 1.5s ease-in-out 0.8s;
 }
 #container div:nth-child(2) {
-  grid-area: greeter;
+  grid-area: greetText;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+  padding-top: 7rem;
+}
+#container div:nth-child(2) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  color: white;
+  transition: all 1.5s ease-in-out 0.8s;
 }
 #container div:nth-child(3) {
-  padding: 2rem 0px;
-}
-#container div:nth-child(4) {
-  align-self: center;
-  padding: 1rem 2rem;
-  line-height: 2rem;
-  font-size: 1.5rem;
-  background-color: white;
-  padding: 2rem;
-}
-#container div:nth-child(4) p {
-  font-family: SSPR;
-  font-weight: 800;
-  letter-spacing: 1px;
-  transform: scale(0.8);
-  color: white;
-  transition: all 1.5s ease-in-out 0.8s;
-}
-#container div:nth-child(4) p {
-  margin: 0px;
+  grid-area: greeter;
 }
 #container div:nth-child(5) {
-  grid-area: center;
-}
-#container div:nth-child(6) {
-  grid-area: bottom;
-  padding: 1rem 2rem;
+  align-self: center;
+  padding: 0px 3rem;
   line-height: 2rem;
   font-size: 1.5rem;
   background-color: white;
-  padding: 2rem;
+  padding-left: 2rem;
 }
-#container div:nth-child(6) p {
+#container div:nth-child(5) p {
   font-family: SSPR;
   font-weight: 800;
   letter-spacing: 1px;
+  padding: 0px;
   transform: scale(0.8);
+  margin: 0px;
   color: white;
   transition: all 1.5s ease-in-out 0.8s;
 }
-#container div:nth-child(6) p {
+#container div:nth-child(5) p {
   margin: 0px;
 }
+#container div:nth-child(6) {
+  grid-area: center;
+}
 #container div:nth-child(7) {
+  grid-area: bottom;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+}
+#container div:nth-child(7) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  color: white;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#container div:nth-child(7) p {
+  margin: 0px;
+}
+#container div:nth-child(8) {
   grid-area: closing;
 }
 #container #copyright {
   grid-area: cr;
   display: flex;
+  margin-bottom: 2rem;
   justify-content: space-around;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0px 3rem;
   line-height: 2rem;
   font-size: 1.5rem;
   background-color: white;
-  font-size: 1em;
+  font-size: 1rem;
 }
 #container #copyright p {
   font-family: SSPR;
   font-weight: 800;
   letter-spacing: 1px;
+  padding: 0px;
   transform: scale(0.8);
+  margin: 0px;
   color: white;
   transition: all 1.5s ease-in-out 0.8s;
 }
@@ -195,4 +242,346 @@ body {
   display: inline-block;
   transform: scale(1);
   color: black;
+}
+.text_style_mid {
+  padding: 0px;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+}
+.text_style_mid p {
+  font-family: SSPR;
+  font-weight: 800;
+  max-width: 60vw;
+  margin: 0px auto;
+  padding: 0px;
+  letter-spacing: 1px;
+  transform: scale(0.8);
+  color: white;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+.text_style_mid {
+  padding: 0px;
+  line-height: 1.8em;
+  font-size: 1.5rem;
+  background-color: white;
+}
+.text_style_mid p {
+  font-family: SSPR;
+  font-weight: 800;
+  max-width: 60vw;
+  margin: 0px auto;
+  padding: 0px;
+  letter-spacing: 1px;
+  transform: scale(0.8);
+  color: white;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
+  #context #navlinks {
+    align-content: start;
+  }
+  #container {
+    width: 90vw;
+    margin: 0px auto;
+    grid-row-gap: 5vw;
+    padding: 0px;
+    grid-template-columns: 45vw 45vw;
+  }
+  #container div:nth-child(2) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    grid-area: greetText;
+    padding-top: 7rem;
+  }
+  #container div:nth-child(2) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(2) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(3) {
+    overflow: hidden;
+  }
+  #container div:nth-child(3) img {
+    margin-bottom: -7vh;
+  }
+  #container div:nth-child(5) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 5vw;
+  }
+  #container div:nth-child(5) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(5) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(6) {
+    overflow: hidden;
+    grid-column: 2;
+    grid-row: 5;
+    position: relative;
+    height: 40vw;
+  }
+  #container div:nth-child(6) img {
+    height: 40vw;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  #container div:nth-child(7) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    align-self: center;
+    text-align: right;
+    padding: 0px 5vw;
+    grid-column: 1;
+    grid-row: 5;
+  }
+  #container div:nth-child(7) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(7) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(8) {
+    position: relative;
+    height: 45vw;
+    overflow: hidden;
+  }
+  #container div:nth-child(8) img {
+    position: absolute;
+    top: -10vw;
+  }
+  #container #copyright {
+    line-height: 2rem;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1em;
+    padding: 0px;
+    justify-items: space-around;
+  }
+  #container #copyright p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container #copyright p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: white;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container #copyright p {
+    margin: 0px;
+    color: black;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  #context h1 {
+    background-color: transparent;
+  }
+  #context #navlinks {
+    height: 100vh;
+    margin-top: -2em;
+    align-content: start;
+  }
+  #context a {
+    font-size: 2rem;
+    height: 15vh;
+    line-height: 15vh;
+    transition: 0.4s all;
+  }
+  #context a:hover {
+    transform: scale(1.2);
+  }
+  #context #photography p {
+    font-size: 2rem;
+  }
+  #context #photography a {
+    font-size: 1.5rem;
+    line-height: auto;
+  }
+  .text_style_full {
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+  }
+  #container {
+    width: 92%;
+    margin: 0px auto;
+    max-width: 1500px;
+    margin-top: 5em;
+    grid-template-areas: "greetText greetText greetText" "firstText imageA imageA" "imageB secondText imageC" "thirdText thirdText thirdText" "lastImage lastImage lastImage" "cr cr cr";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4vw;
+  }
+  #container div:nth-child(2) {
+    grid-area: greetText;
+    align-self: center;
+    justify-self: center;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    margin-top: 4vw;
+  }
+  #container div:nth-child(1) {
+    grid-area: firstText;
+    display: block;
+    font-family: SSPR;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    text-align: right;
+    padding: 0px;
+    font-weight: 800;
+    align-self: center;
+  }
+  #container div:nth-child(3) {
+    grid-area: imageA;
+    overflow: hidden;
+  }
+  #container div:nth-child(3) img {
+    margin-bottom: -12vh;
+    position: relative;
+    width: 100%;
+  }
+  #container div:nth-child(4) {
+    grid-area: imageB;
+    overflow: hidden;
+  }
+  #container div:nth-child(4) img {
+    position: relative;
+    width: 100%;
+  }
+  #container div:nth-child(5) {
+    grid-area: secondText;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+  }
+  #container div:nth-child(6) {
+    grid-area: imageC;
+    overflow: hidden;
+  }
+  #container div:nth-child(6) img {
+    position: relative;
+    right: 50%;
+    width: auto;
+    height: 100%;
+  }
+  #container div:nth-child(7) {
+    grid-area: thirdText;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    justify-self: center;
+  }
+  #container div:nth-child(7) br {
+    display: none;
+  }
+  #container div:nth-child(8) {
+    grid-area: lastImage;
+    overflow: hidden;
+  }
+  #container div:nth-child(8) img {
+    width: 100%;
+    margin-top: -12%;
+    margin-bottom: -10%;
+  }
+  #container div:nth-child(9) {
+    grid-area: cr;
+  }
 }
