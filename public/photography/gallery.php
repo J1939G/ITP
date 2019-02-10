@@ -3,10 +3,8 @@
     or die('Error connecting to MySQL server.');
     $lang = 'en';
     if (isset($_GET['lang'])) {
-        if( $_GET['lang'] == cz){
-            $lang = $_GET['lang'];
-            $langFlag = "?lang=cz";
-        }
+        $lang = $_GET['lang'];
+        $langFlag = "?lang=" . $lang;
     } else {
         $langFlag = "?lang=en";
     }
@@ -21,45 +19,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="../assets/styles/gallery.css">
+    <?php if($row['cat'] == 'nature') { echo "<link rel='stylesheet' href='../assets/styles/nature.css'";} ?>
     <title><?php echo $row['name']?></title>
-    <script>
-        window.onscroll = function() {scrollFunction()};
-        function gebi(id){
-            return document.getElementById(id).style;
-        }
-        function makeAppear(child){
-            item = document.querySelector('#container div:nth-child(' + child + ')');
-            if( (item.getBoundingClientRect().top) < document.body.clientHeight){
-                item.childNodes[0].style.color='black';
-                item.childNodes[0].style.transform='scale(1)';
-            }
-        }
-        function scrollFunction() {
-            if( document.body.scrollTop  > 5 ){
-                gebi('context').fontSize = "0.5em";
-                gebi('arrow').fontSize = "0.5rem";
-            } else {
-                gebi('context').fontSize = "1em";
-                gebi('arrow').fontSize = "1rem";
-            }
-            makeAppear(1);
-            makeAppear(5);
-            makeAppear(7);
-        }
-        function menu(id){
-            item = document.getElementById(id);
-            if( item.style.height != "100vh" ){
-                item.style.height = "100vh";
-                gebi('arrow').transform = "rotate(180deg)";
-                gebi('context').fontSize = "1em";
-                gebi('arrow').fontSize = "1em";
-            }
-            else {
-                item.style.height = "5em";
-                gebi('arrow').transform = "rotate(0deg)";
-            }
-        }
-    </script>
+    <link rel="shortcut icon" href="../assets/images/camera.ico">
+    <script src="../assets/scripts/gallery.js"></script>
 </head>
 <body >
     <div id="context">
