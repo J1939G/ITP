@@ -1,10 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Source+Sans+Pro:900|Open+Sans:800|Major+Mono+Display');
+@font-face {
+  font-family: SSPB;
+  src: url("../fonts/SSPB.ttf");
+}
 body {
   padding: 0px;
   border: 0px;
   margin: 0px;
-  font-family: 'Source Sans Pro', sans-serif;
+  scroll-behavior: smooth;
+  font-family: 'SSPB', sans-serif;
   font-size: 1em;
+}
+#languageSwitcher {
+  position: fixed;
+  height: auto;
+  width: auto;
+  display: flex;
+  left: 0px;
+  right: 0px;
+}
+#languageSwitcher a {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-size: cover;
+  display: inline-block;
+  background-position: center;
+}
+#languageSwitcher a:hover {
+  transform: none;
 }
 #content {
   position: fixed;
