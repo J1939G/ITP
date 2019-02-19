@@ -1,100 +1,14 @@
-@font-face {
-    font-family: SSPB;
-    src: url("../fonts/SSPB.ttf")
-}
+@import url('page.less');
+@import url('navbars.less');
+
 @font-face {
     font-family: SSPR;
     src: url("../fonts/SSPR.ttf")
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-    scroll-behavior: smooth;
-    border: 0px;
-    font-family: SSPB, sans-serif;
+img {
+    pointer-events: none !important;
 }
-
-img {pointer-events: none !important;}
-
-#context {
-    position: fixed;
-    text-align: center;
-    background-color: white;
-    width: 100%;
-    height: 5em;
-    top: 0px;
-    left: 0px;
-    z-index: 10;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: all 0.6s ease-in-out;
-    h1 {
-        line-height: 1.25em;
-        font-size: 4em;
-        margin-top: 0px;
-        position: relative;
-    }
-    #arrow {
-        position: absolute;
-        font-size: 1rem;
-        top:0em;
-        right: 0em;
-        width: 5em;
-        height: 5em;
-        background-image: url("../images/menu_arrow.svg");
-        background-size: 5em;
-        display: block;
-        transition: all 0.6s ease-in-out;
-    }
-    #navlinks {
-        background-color: white;
-        height: 70vh;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: flex-start;
-    }
-    a, p {
-        flex-basis: 100%;
-        display: block;
-        position: relative;
-        font-size: 2.4rem;
-        font-weight: 800;
-        height: 12vh;
-        line-height: 12vh;
-        text-decoration: none;
-        color: black;
-    }
-    #photography {
-        z-index: 15;
-        height: 12vh;
-        line-height: 12vh;
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        height: 12vh;
-        align-items: flex-start;
-        overflow: hidden;
-        transition: 0.6s all ease-in-out;
-        p {
-            margin: 0px;
-            line-height: 12vh;
-            font-size: 2.4rem;
-        }
-        a {
-            line-height: 8vh;
-            height: 8vh;
-            flex-basis: 100%;
-            font-size: 2rem;
-        }
-        &:hover {
-            height: 36vh;
-            transition: 0.6s all ease-in-out;
-        }
-    }
-
-}
-
 .text_style {
     padding: 0px 3rem;
     line-height: 2rem;
@@ -131,7 +45,7 @@ img {pointer-events: none !important;}
     & div:nth-child(2){
         grid-area: greetText;
         .text_style;
-        padding-top: 7rem;
+        padding-top: 6rem;
     }
     & div:nth-child(3){
         grid-area: greeter;
@@ -220,11 +134,7 @@ img {pointer-events: none !important;}
 }
 
 @media only screen and ( min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
-    #context {
-        #navlinks {
-            align-content: start;
-        }
-    }
+
     #container {
         width: 90vw;
         margin: 0px auto;
@@ -235,7 +145,7 @@ img {pointer-events: none !important;}
         & div:nth-child(2){
             .text_style_mid;
             grid-area: greetText;
-            padding-top: 7rem;
+            padding-top: 6rem;
         }
         & div:nth-child(3){
             overflow: hidden;
@@ -293,34 +203,6 @@ img {pointer-events: none !important;}
 }
 
 @media only screen and (min-aspect-ratio: 3/2) {
-    #context {
-        h1 {
-            background-color: transparent;
-        }
-        #navlinks {
-            height: 100vh;
-            margin-top: -2em;
-            align-content: start;
-        }
-        a {
-            font-size: 2rem;
-            height: 15vh;
-            line-height: 15vh;
-            transition: 0.4s all;
-        }
-        a:hover {
-            transform: scale(1.2);
-        }
-        #photography {
-            p{
-                font-size: 2rem;
-            }
-            a {
-                font-size: 1.5rem;
-                line-height: auto;
-            }
-        }
-    }
 
     .text_style_full {
         padding: 0px 4vw;

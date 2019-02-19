@@ -2,10 +2,6 @@
   font-family: SSPB;
   src: url("../fonts/SSPB.ttf");
 }
-@font-face {
-  font-family: SSPR;
-  src: url("../fonts/SSPR.ttf");
-}
 body {
   margin: 0px;
   padding: 0px;
@@ -13,30 +9,34 @@ body {
   border: 0px;
   font-family: SSPB, sans-serif;
 }
-img {
-  pointer-events: none !important;
-}
-#context {
+#navigation {
+  font-size: 1rem;
+  transition: all 0.6s ease-in-out;
   position: fixed;
   text-align: center;
-  background-color: white;
+  height: auto;
   width: 100%;
-  height: 5em;
   top: 0px;
   left: 0px;
-  z-index: 10;
+  display: flex;
+  z-index: 5;
+  flex-wrap: wrap;
+  background-color: white;
   text-transform: uppercase;
   overflow: hidden;
-  transition: all 0.6s ease-in-out;
 }
-#context h1 {
-  line-height: 1.25em;
+#navigation #title {
+  background-image: url(../images/sport/sport_header.jpg);
+  z-index: 10;
+  flex-basis: 100%;
   font-size: 4em;
-  margin-top: 0px;
-  position: relative;
+  overflow: hidden;
+  line-height: 1.24em;
+  margin: 0px;
 }
-#context #arrow {
+#navigation #arrow {
   position: absolute;
+  z-index: 12;
   font-size: 1rem;
   top: 0em;
   right: 0em;
@@ -47,50 +47,126 @@ img {
   display: block;
   transition: all 0.6s ease-in-out;
 }
-#context #navlinks {
-  background-color: white;
-  height: 70vh;
+#navigation #menu {
+  flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
+  justify-content: center;
+  background-color: white;
+  height: 0;
+  transition: all 0.8s ease-in-out;
 }
-#context a,
-#context p {
-  flex-basis: 100%;
-  display: block;
-  position: relative;
+#navigation #menu a,
+#navigation #menu p {
+  flex-basis: 80%;
   font-size: 2.4rem;
   font-weight: 800;
-  height: 12vh;
-  line-height: 12vh;
-  text-decoration: none;
+  line-height: 4.8rem;
   color: black;
 }
-#context #photography {
-  z-index: 15;
-  line-height: 12vh;
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  height: 12vh;
-  align-items: flex-start;
-  overflow: hidden;
-  transition: 0.6s all ease-in-out;
-}
-#context #photography p {
+#navigation #menu p {
   margin: 0px;
-  line-height: 12vh;
-  font-size: 2.4rem;
+  margin-top: 1.2rem;
+  height: 4.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
 }
-#context #photography a {
-  line-height: 8vh;
-  height: 8vh;
+#navigation #menu p a {
   flex-basis: 100%;
   font-size: 2rem;
+  line-height: 2rem;
 }
-#context #photography:hover {
-  height: 36vh;
-  transition: 0.6s all ease-in-out;
+#navigation #menu p:hover {
+  height: 16rem;
+}
+@media only screen and (max-aspect-ratio: 3/4) {
+  #menu {
+    background-image: none !important;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) {
+  #navigation #arrow {
+    left: 0px;
+    right: auto;
+    transform: rotate(270deg);
+  }
+  #navigation #menu {
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+    width: 50%;
+    background-image: url(../images/sport/sport_header.jpg);
+    background-attachment: fixed;
+  }
+  #navigation #menu p {
+    margin-top: 6rem;
+    height: 12rem !important;
+  }
+  #navigation #menu p,
+  #navigation #menu a {
+    font-size: 2rem;
+    line-height: 4rem;
+    height: 4rem;
+    transition: all 0.4s ease-in-out;
+  }
+  #navigation #menu p a {
+    font-size: 1.5rem;
+    line-height: 1em;
+    height: 1em;
+  }
+  #navigation #menu a:hover {
+    transform: scale(1.2);
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  #navigation #menu {
+    width: 25%;
+  }
+}
+/*    #navigation {
+        #arrow {
+            display: none;
+        }
+        #menu {
+            position: fixed;
+            height: 100% !important;
+            transform: translateX(0%) !important;
+            width: 100% / 3;
+            background-image: url(../images/sport/sport_header.jpg);
+            background-attachment: fixed;
+            p {
+                margin-top: 6rem;
+                height: 16rem !important;
+            }
+            p, a {
+                font-size: 2rem;
+                line-height: 4rem;
+                height: 4rem;
+                transition: all 0.4s ease-in-out;
+
+            }
+            p a{
+                font-size: 1.5rem;
+                line-height: 1em;
+                height: 1em;
+            }
+            a:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+}*/
+@font-face {
+  font-family: SSPR;
+  src: url("../fonts/SSPR.ttf");
+}
+img {
+  pointer-events: none !important;
 }
 .text_style {
   padding: 0px 3rem;
@@ -144,7 +220,7 @@ img {
   line-height: 2rem;
   font-size: 1.5rem;
   background-color: white;
-  padding-top: 7rem;
+  padding-top: 6rem;
 }
 #container div:nth-child(2) p {
   font-family: SSPR;
@@ -278,9 +354,6 @@ img {
   transition: all 1.5s ease-in-out 0.8s;
 }
 @media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
-  #context #navlinks {
-    align-content: start;
-  }
   #container {
     width: 90vw;
     margin: 0px auto;
@@ -295,7 +368,7 @@ img {
     font-size: 1.5rem;
     background-color: white;
     grid-area: greetText;
-    padding-top: 7rem;
+    padding-top: 6rem;
   }
   #container div:nth-child(2) p {
     font-family: SSPR;
@@ -450,30 +523,6 @@ img {
   }
 }
 @media only screen and (min-aspect-ratio: 3/2) {
-  #context h1 {
-    background-color: transparent;
-  }
-  #context #navlinks {
-    height: 100vh;
-    margin-top: -2em;
-    align-content: start;
-  }
-  #context a {
-    font-size: 2rem;
-    height: 15vh;
-    line-height: 15vh;
-    transition: 0.4s all;
-  }
-  #context a:hover {
-    transform: scale(1.2);
-  }
-  #context #photography p {
-    font-size: 2rem;
-  }
-  #context #photography a {
-    font-size: 1.5rem;
-    line-height: auto;
-  }
   .text_style_full {
     padding: 0px 4vw;
     text-align: center;

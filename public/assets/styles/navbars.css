@@ -1,0 +1,119 @@
+#navigation {
+  font-size: 1rem;
+  transition: all 0.6s ease-in-out;
+  position: fixed;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  z-index: 5;
+  flex-wrap: wrap;
+  background-color: white;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+#navigation #title {
+  background-image: url(../images/jose/jose_header.jpg);
+  z-index: 10;
+  flex-basis: 100%;
+  font-size: 4em;
+  overflow: hidden;
+  line-height: 1.24em;
+  margin: 0px;
+}
+#navigation #arrow {
+  position: absolute;
+  z-index: 12;
+  font-size: 1rem;
+  top: 0em;
+  right: 0em;
+  width: 5em;
+  height: 5em;
+  background-image: url("../images/menu_arrow.svg");
+  background-size: 5em;
+  display: block;
+  transition: all 0.6s ease-in-out;
+}
+#navigation #menu {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  background-color: white;
+  height: 0;
+  transition: all 0.8s ease-in-out;
+}
+#navigation #menu a,
+#navigation #menu p {
+  flex-basis: 80%;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 4.8rem;
+  color: black;
+}
+#navigation #menu p {
+  margin: 0px;
+  margin-top: 1.2rem;
+  height: 4.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
+}
+#navigation #menu p a {
+  flex-basis: 100%;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+#navigation #menu p:hover {
+  height: 16rem;
+}
+@media only screen and (max-aspect-ratio: 3/4) {
+  #menu {
+    background-image: none !important;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) {
+  #navigation #arrow {
+    left: 0px;
+    right: auto;
+    transform: rotate(270deg);
+  }
+  #navigation #menu {
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+    width: 50%;
+    background-image: url(../images/jose/jose_header.jpg);
+    background-attachment: fixed;
+  }
+  #navigation #menu p {
+    margin-top: 6rem;
+    height: 12rem !important;
+  }
+  #navigation #menu p,
+  #navigation #menu a {
+    font-size: 2rem;
+    line-height: 4rem;
+    height: 4rem;
+    transition: all 0.4s ease-in-out;
+  }
+  #navigation #menu p a {
+    font-size: 1.5rem;
+    line-height: 1em;
+    height: 1em;
+  }
+  #navigation #menu a:hover {
+    transform: scale(1.2);
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  #navigation #menu {
+    width: 25%;
+  }
+}

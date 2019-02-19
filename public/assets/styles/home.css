@@ -3,12 +3,11 @@
   src: url("../fonts/SSPB.ttf");
 }
 body {
-  padding: 0px;
-  border: 0px;
   margin: 0px;
+  padding: 0px;
   scroll-behavior: smooth;
-  font-family: 'SSPB', sans-serif;
-  font-size: 1em;
+  border: 0px;
+  font-family: SSPB, sans-serif;
 }
 #languageSwitcher {
   position: fixed;
