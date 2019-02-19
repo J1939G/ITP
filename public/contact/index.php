@@ -23,7 +23,7 @@
     <title><?php echo $row['linkF']?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/styles/jose.css" />
-    <script src="assets/scripts/jose.js"></script>
+    <script src="../assets/scripts/jose.js"></script>
 </head>
 <body>
     <div id="navigation">
@@ -31,25 +31,26 @@
         <div onclick="menu('menu')" id="arrow"></div>
         <div id="menu">
             <p><?php echo $row['linkBCD'] ?>
-                <a href="photography/portrait.php<?php echo $langFlag ?>"><?php echo $row['linkB'] ?></a>
-                <a href="photography/nature.php<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a>
-                <a href="photography/sport.php<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a>
+                <a href="../photography/portrait/<?php echo $langFlag ?>"><?php echo $row['linkB'] ?></a>
+                <a href="../photography/nature/<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a>
+                <a href="../photography/sport/<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a>
             </p>
-            <a href="stories<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
-            <a href="jose.php<?php echo $langFlag ?>"><?php echo $row['linkA'] ?></a>
+            <a href="../stories<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
+            <a href="../jose<?php echo $langFlag ?>"><?php echo $row['linkA'] ?></a>
+            <a href="../home<?php echo $langFlag ?>"><?php echo $row['home'] ?></a>
         </div>
     </div>
     <div id="content">
         <a class="contact" href="mailto:<?php echo $row['mail']?>">
-            <div style="background-image:url('assets/images/mail.svg')"></div>
+            <div style="background-image:url('../assets/images/mail.svg')"></div>
             <p><?php echo $row['mail']?></p>
         </a>
         <a class="contact" href="tel:<?php echo $row['phone']?>">
-            <div style="background-image:url('assets/images/phone.svg')"></div>
+            <div style="background-image:url('../assets/images/phone.svg')"></div>
             <p><?php echo $row['phone']?></p>
         </a>
         <a class="contact" style="margin-bottom: 10em" href="https://www.instagram.com/jgredonsky/">
-            <div style="background-image:url('assets/images/instagram.svg')"></div>
+            <div style="background-image:url('../assets/images/instagram.svg')"></div>
             <p><?php echo $row['instagram']?></p>
         </a>
         <div id="copyright">
