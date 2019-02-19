@@ -1,5 +1,4 @@
-<?php 
-    $category = basename(__FILE__, '.php');
+<?php
     $db = mysqli_connect('localhost','ich','a','pittsburg')
     or die('Error connecting to MySQL server.');
     $lang = 'en';
@@ -22,8 +21,8 @@
     <meta charset="utf-8" />
     <title><?php echo $row['title']?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/styles/jose.css" />
-    <script src="assets/scripts/jose.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/styles/jose.css" />
+    <script src="../assets/scripts/jose.js"></script>
 </head>
 <body>
     <div id="navigation">
@@ -31,17 +30,17 @@
         <div onclick="menu('menu')" id="arrow"></div>
         <div id="menu">
             <p><?php echo $row['linkBCD'] ?>
-                <a href="photography/portrait.php<?php echo $langFlag ?>"><?php echo $row['linkB'] ?></a>
-                <a href="photography/nature.php<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a>
-                <a href="photography/sport.php<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a>
+                <a href="../photography/portrait/<?php echo $langFlag ?>"><?php echo $row['linkB'] ?></a>
+                <a href="../photography/nature/<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a>
+                <a href="../photography/sport/<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a>
             </p>
-            <a href="stories<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
-            <a href="contact.php<?php echo $langFlag ?>"><?php echo $row['linkF'] ?></a>
+            <a href="../stories<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
+            <a href="../contact<?php echo $langFlag ?>"><?php echo $row['linkF'] ?></a>
         </div>
     </div>
     <div id="content">
         <p>
-            <img src="assets/images/jose/me.jpg" alt="José Smutný"/>
+            <img src="../assets/images/jose/me.jpg" alt="José Smutný"/>
             <?php echo $row['content'] ?>
         </p>
         <div id="copyright">
