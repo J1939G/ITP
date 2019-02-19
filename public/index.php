@@ -1,7 +1,6 @@
 <?php 
     $db = mysqli_connect('localhost','ich','a','pittsburg')
-    or die('Error connecting to MySQL server.');
-    $category = basename(__FILE__, '.php');
+    or die('Error connecting to server.');
 	$lang = 'en';
     if (isset($_GET['lang'])) {
 		$lang = $_GET['lang'];
