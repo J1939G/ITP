@@ -1,9 +1,9 @@
 window.onscroll = function() {scrollFunction()};
-window.onresize = function() {menu('menu');menu('menu');};
+window.onresize = function() {menu('menu'); menu('menu');}
+
 function gebi(id){
     return document.getElementById(id).style;
 }
-
 function scrollFunction() {
     if( document.body.scrollTop  > 5 || document.documentElement.scrollTop > 5 ){
         gebi('navigation').fontSize = "0.5em";
@@ -12,26 +12,14 @@ function scrollFunction() {
         gebi('navigation').fontSize = "1em";
         gebi('arrow').fontSize = "1rem";
     }
-    makeAppear(5);
-    makeAppear(7);
 }
-
-function makeAppear(child){
-    item = document.querySelector('#container div:nth-child(' + child + ')');
-    if( (item.getBoundingClientRect().top) < document.body.clientHeight){
-        item.childNodes[0].style.color='black';
-        item.childNodes[0].style.transform='scale(1)';
-    }
-}
-
-
 function menu(id){
     item = document.getElementById(id);
     aspectRatio = window.innerWidth/window.innerHeight;
     if( aspectRatio < 3/4) {
         item.style.transform = "translateX(0%)";
-        if( item.style.height != (window.innerHeight + 'px') ){
-            item.style.height = (window.innerHeight + 'px');
+        if( item.style.height != (document.body.offsetHeight + 'px') ){
+            item.style.height = (document.body.offsetHeight + 'px');
             gebi('arrow').transform = "rotate(180deg)";
             gebi('arrow').fontSize = "1em";
             gebi('navigation').fontSize = "1em";
@@ -41,11 +29,9 @@ function menu(id){
             gebi('arrow').transform = "inherit";
         }
     }
-    else if( aspectRatio >= 3/4){
+    else if( aspectRatio > 3/4 && aspectRatio < 3/2){
         item.style.height = "100%";
         if( item.style.transform != "translateX(0%)" ){
-            gebi('arrow').fontSize = "1em";
-            gebi('navigation').fontSize = "1em";
             item.style.transform = "translateX(0%)";
             gebi('arrow').transform = "rotate(90deg)";
         } else {
