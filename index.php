@@ -14,21 +14,31 @@
     $row = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $lang ?>">
 	<head>
 		<title>José Smutný photography</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="assets/styles/home.css"/>
-   		<link rel="shortcut icon" href="../assets/images/camera.ico" type="image/x-icon">
-		<script src="assets/scripts/home.js"></script>
+   		<link rel="shortcut icon" href="camera.ico" type="image/x-icon">
+		<script>
+			function changer(id){
+				title = document.getElementById(id);
+				if( title.innerHTML == "J. G. R. S."){
+					title.innerHTML = "José Smutný";
+				}
+				else {
+					title.innerHTML = "J. G. R. S.";
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id="content">
 			<div id="languageSwitcher">
-				<?php if( $lang != "en") { echo '<a href="/pittsburg/public/?lang=en" style="background-image: url(assets/images/en.svg)"></a>';}?>
-				<?php if( $lang != "es") { echo '<a href="/pittsburg/public/?lang=es" style="background-image: url(assets/images/es.svg)"></a>';}?>
-				<?php if( $lang != "cz") { echo '<a href="/pittsburg/public/?lang=cz" style="background-image: url(assets/images/cz.svg)"></a>';}?>
+				<?php if( $lang != "en") { echo '<a href="/pittsburg/?lang=en" style="background-image: url(assets/images/en.svg)"></a>';}?>
+				<?php if( $lang != "es") { echo '<a href="/pittsburg/?lang=es" style="background-image: url(assets/images/es.svg)"></a>';}?>
+				<?php if( $lang != "cz") { echo '<a href="/pittsburg/?lang=cz" style="background-image: url(assets/images/cz.svg)"></a>';}?>
 			</div>
 			<h1 onclick="changer(this.id)" id="title">José Smutný</h1>
 			<a href="jose/<?php echo $langFlag ?>"><?php echo $row['linkA'] ?></a>
