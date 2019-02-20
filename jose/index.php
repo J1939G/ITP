@@ -6,7 +6,7 @@
         $lang = $_GET['lang'];
         $langFlag = "?lang=" . $lang;
     } else {
-        $langFlag = "?lang=en";
+        $langFlag = "";
     }
     $query = "SELECT sitp_me.*, sitp_links.* FROM sitp_me, sitp_links WHERE sitp_me.lang='$lang' && sitp_links.lang='$lang'";
     mysqli_query($db, $query) or die('Error querying database.');

@@ -1,13 +1,12 @@
-<?php 
-    $category = basename(__FILE__, '.php');
+<?php
     $db = mysqli_connect('localhost','ich','a','pittsburg')
-    or die('Error connecting to MySQL server.');
+    or die('Error connecting to MySQL server. Please contact site manager on jgredonsky@gmail.com');
     $lang = 'en';
     if (isset($_GET['lang'])) {
         $lang = $_GET['lang'];
         $langFlag = "?lang=" . $lang;
     } else {
-        $langFlag = "?lang=en";
+        $langFlag = "";
     }
     $query = "SELECT sitp_contact.*, sitp_links.* FROM sitp_contact, sitp_links WHERE sitp_contact.lang='$lang' && sitp_links.lang='$lang'";
     mysqli_query($db, $query) or die('Error querying database.');
@@ -35,9 +34,9 @@
                 <a href="../photography/nature/<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a>
                 <a href="../photography/sport/<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a>
             </p>
-            <a href="../stories<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
-            <a href="../jose<?php echo $langFlag ?>"><?php echo $row['linkA'] ?></a>
-            <a href="../home<?php echo $langFlag ?>"><?php echo $row['home'] ?></a>
+            <a href="../stories/<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
+            <a href="../jose/<?php echo $langFlag ?>"><?php echo $row['linkA'] ?></a>
+            <a href="../<?php echo $langFlag ?>"><?php echo $row['home'] ?></a>
         </div>
     </div>
     <div id="content">

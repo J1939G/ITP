@@ -1,7 +1,6 @@
 <?php 
     $db = mysqli_connect('localhost','ich','a','pittsburg')
     or die('Error connecting to MySQL server.');
-    $category = basename(__FILE__, '.php');
     $lang = 'en';
     if (isset($_GET['lang'])) {
         $lang = $_GET['lang'];
@@ -18,13 +17,13 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../assets/styles/photography.css"/>
-    <title>J.S. photography</title>
+    <title>J. S. photography</title>
 </head>
 <body>
 	<div id="container">
-		<div id="first" class="cat"><a href="portrait.php<?php echo $langFlag ?>"><?php echo $row['linkB'] ?></a><img src="../assets/images/people.jpg" alt="people"></div>
-		<div id="second" class="cat"><a href="nature.php<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a><img src="../assets/images/nature.jpg" alt="nature"></div>
-		<div id="third" class="cat"><a href="sport.php<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a><img src="../assets/images/sport.jpg" alt="sport"></div>
+		<div id="first" class="cat"><a href="portrait/<?php echo $langFlag ?>"><?php echo $row['linkB'] ?></a><img src="../assets/images/people.jpg" alt="people"></div>
+		<div id="second" class="cat"><a href="nature/<?php echo $langFlag ?>"><?php echo $row['linkC'] ?></a><img src="../assets/images/nature.jpg" alt="nature"></div>
+		<div id="third" class="cat"><a href="sport/<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a><img src="../assets/images/sport.jpg" alt="sport"></div>
 	</div>	
 </body>
 </html>
