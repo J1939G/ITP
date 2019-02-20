@@ -15,7 +15,7 @@ img {
     line-height: 2rem;
     font-size: 1.5rem;
     opacity:0;
-    background-color: white;
+    background-color:white;
     p {
         font-family: SSPR;
         font-weight: 800;
@@ -47,6 +47,7 @@ img {
     & div:nth-child(1){
         animation: fadein 1.5s 1.5s forwards;
         .text_style;
+        display: none;
     }
     & div:nth-child(2){
         grid-area: greetText;
@@ -118,7 +119,7 @@ img {
         padding: 0px;
         letter-spacing: 1px;
         transform: scale(0.8);
-        color: white;
+        color: black;
         transition: all 1.5s ease-in-out 0.8s;
     }
 }
@@ -136,7 +137,7 @@ img {
         padding: 0px;
         letter-spacing: 1px;
         transform: scale(0.8);
-        color: white;
+        color: black;
         transition: all 1.5s ease-in-out 0.8s;
     }
 }
@@ -150,10 +151,15 @@ img {
         padding: 0px;
         grid-template-columns: 45vw 45vw;    
         
-        & div:nth-child(2){
-            .text_style_mid;
+        & div:nth-child(1){
+            display: block;
             grid-area: greetText;
-            padding-top: 6rem;
+            margin-top: 5rem;
+            grid-area: greetText;
+        }
+
+        & div:nth-child(2){
+            display: none;
         }
         & div:nth-child(3){
             overflow: hidden;

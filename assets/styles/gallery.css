@@ -183,6 +183,7 @@ img {
   font-size: 1.5rem;
   opacity: 0;
   background-color: white;
+  display: none;
 }
 #container div:nth-child(1) p {
   font-family: SSPR;
@@ -314,7 +315,7 @@ img {
   padding: 0px;
   letter-spacing: 1px;
   transform: scale(0.8);
-  color: white;
+  color: black;
   transition: all 1.5s ease-in-out 0.8s;
 }
 .text_style_mid {
@@ -331,7 +332,7 @@ img {
   padding: 0px;
   letter-spacing: 1px;
   transform: scale(0.8);
-  color: white;
+  color: black;
   transition: all 1.5s ease-in-out 0.8s;
 }
 @media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
@@ -342,36 +343,13 @@ img {
     padding: 0px;
     grid-template-columns: 45vw 45vw;
   }
-  #container div:nth-child(2) {
-    line-height: 2rem;
-    padding: 0px;
-    line-height: 1.8em;
-    font-size: 1.5rem;
-    background-color: white;
+  #container div:nth-child(1) {
+    display: block;
+    margin-top: 5rem;
     grid-area: greetText;
-    padding-top: 6rem;
   }
-  #container div:nth-child(2) p {
-    font-family: SSPR;
-    font-weight: 800;
-    max-width: 60vw;
-    margin: 0px auto;
-    padding: 0px;
-    letter-spacing: 1px;
-    transform: scale(0.8);
-    color: white;
-    transition: all 1.5s ease-in-out 0.8s;
-  }
-  #container div:nth-child(2) p {
-    font-family: SSPR;
-    font-weight: 800;
-    max-width: 60vw;
-    margin: 0px auto;
-    padding: 0px;
-    letter-spacing: 1px;
-    transform: scale(0.8);
-    color: white;
-    transition: all 1.5s ease-in-out 0.8s;
+  #container div:nth-child(2) {
+    display: none;
   }
   #container div:nth-child(3) {
     overflow: hidden;
@@ -395,7 +373,7 @@ img {
     padding: 0px;
     letter-spacing: 1px;
     transform: scale(0.8);
-    color: white;
+    color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
   #container div:nth-child(5) p {
@@ -406,7 +384,7 @@ img {
     padding: 0px;
     letter-spacing: 1px;
     transform: scale(0.8);
-    color: white;
+    color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
   #container div:nth-child(6) {
@@ -443,7 +421,7 @@ img {
     padding: 0px;
     letter-spacing: 1px;
     transform: scale(0.8);
-    color: white;
+    color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
   #container div:nth-child(7) p {
@@ -454,7 +432,7 @@ img {
     padding: 0px;
     letter-spacing: 1px;
     transform: scale(0.8);
-    color: white;
+    color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
   #container div:nth-child(8) {
@@ -484,7 +462,7 @@ img {
     padding: 0px;
     letter-spacing: 1px;
     transform: scale(0.8);
-    color: white;
+    color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
   #container #copyright p {
@@ -495,7 +473,7 @@ img {
     padding: 0px;
     letter-spacing: 1px;
     transform: scale(0.8);
-    color: white;
+    color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
   #container #copyright p {
