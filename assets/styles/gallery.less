@@ -9,10 +9,12 @@
 img {
     pointer-events: none !important;
 }
+
 .text_style {
     padding: 0px 3rem;
     line-height: 2rem;
     font-size: 1.5rem;
+    opacity:0;
     background-color: white;
     p {
         font-family: SSPR;
@@ -21,9 +23,13 @@ img {
         padding: 0px;
         transform: scale(0.8);
         margin: 0px;
-        color: white;
         transition: all 1.5s ease-in-out 0.8s;
     }
+}
+
+.visibleText {
+    animation: fadein 2s 0.5s forwards;
+    transform: scale(1);
 }
 
 #container {
@@ -39,13 +45,14 @@ img {
         padding: 0px;
     }
     & div:nth-child(1){
-        display: none;
+        animation: fadein 1.5s 1.5s forwards;
         .text_style;
     }
     & div:nth-child(2){
         grid-area: greetText;
         .text_style;
         padding-top: 6rem;
+	    animation: fadein 1.5s 1s forwards;
     }
     & div:nth-child(3){
         grid-area: greeter;
@@ -78,6 +85,7 @@ img {
         justify-content: space-around;
         align-items: center;
         .text_style;
+        opacity: 1;
         font-size: 1rem;
         a {
             color: black;

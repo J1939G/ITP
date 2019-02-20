@@ -9,3 +9,11 @@ body {
   border: 0px;
   font-family: SSPB, sans-serif;
 }
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

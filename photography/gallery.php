@@ -13,6 +13,8 @@
 
     $result = mysqli_query($db, $query);
     $row = mysqli_fetch_array($result);
+
+    $assets = "../../assets/images/" .  $category . "/";
 ?>
 <html lang="<?php echo $lang?>">
 <head>
@@ -41,14 +43,34 @@
             </div>
         </div>
     <div id="container">
-        <div id="text"><p><?php echo $row['textA']?></p></div>
-        <div><p><?php echo $row['textB']?></p></div>
-        <div><img onload="makeAppear(2);makeAppear(1);" src="../../assets/images/<?php echo $category  ?>/<?php echo $row['imgA']?>.jpg" alt="<?php echo $row['imgA']?>"></div>
-        <div><img src="../../assets/images/<?php echo $category  ?>/<?php echo $row['imgB']?>.jpg" alt="<?php echo $row['imgB']?>"></div>
+        <div id="text"><p><?php echo $row['textB']?></p></div>
+        <div><p><?php echo $row['textA']?></p></div>
+        <div><img src="<?php echo $assets . $row['imgA']?>M.jpg" alt="<?php echo $row['imgA']?>"
+        	    srcset="	<?php echo $assets . $row['imgA'] ?>S.jpg 1450w,
+                            <?php echo $assets . $row['imgA'] ?>M.jpg 1940w,
+                            <?php echo $assets . $row['imgA'] ?>L.jpg 3200w"	
+				/>
+        </div>
+        <div><img src="<?php echo $assets . $row['imgB']?>M.jpg" alt="<?php echo $row['imgB']?>"
+        	    srcset="	<?php echo $assets . $row['imgB'] ?>S.jpg 1450w,
+                            <?php echo $assets . $row['imgB'] ?>M.jpg 1940w,
+                            <?php echo $assets . $row['imgB'] ?>L.jpg 3200w"	
+				/>
+        </div>
         <div><p><?php echo $row['textC']?></p></div>
-        <div><img src="../../assets/images/<?php echo $category  ?>/<?php echo $row['imgC']?>.jpg" alt="<?php echo $row['imgC']?>"></div>
+        <div><img src="<?php echo $assets . $row['imgC']?>M.jpg" alt="<?php echo $row['imgC']?>"
+        	    srcset="	<?php echo $assets . $row['imgC'] ?>S.jpg 1450w,
+                            <?php echo $assets . $row['imgC'] ?>M.jpg 1940w,
+                            <?php echo $assets . $row['imgC'] ?>L.jpg 3200w"	
+				/>
+        </div>
         <div><p><?php echo $row['textD']?></p></div>
-        <div><img src="../../assets/images/<?php echo $category  ?>/<?php echo $row['imgD']?>.jpg" alt="<?php echo $row['imgD']?>"></div>
+        <div><img src="<?php echo $assets . $row['imgD']?>M.jpg" alt="<?php echo $row['imgD']?>"
+        	    srcset="	<?php echo $assets . $row['imgD'] ?>S.jpg 1450w,
+                            <?php echo $assets . $row['imgD'] ?>M.jpg 1940w,
+                            <?php echo $assets . $row['imgD'] ?>L.jpg 3200w"	
+				/>
+        </div>
         <div id="copyright">
             <a href="https:/github.com/j1939g/pittsburg">GitHub</a><p>© 2019 José Smutný</p>
         </div>

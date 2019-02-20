@@ -16,11 +16,15 @@ function scrollFunction() {
     makeAppear(7);
 }
 
-function makeAppear(child){
-    item = document.querySelector('#container div:nth-child(' + child + ')');
-    if( (item.getBoundingClientRect().top) < document.body.clientHeight){
-        item.childNodes[0].style.color='black';
-        item.childNodes[0].style.transform='scale(1)';
+function makeAppear( child) {
+    var element, name, arr;
+    element = document.querySelector('#container div:nth-child(' + child + ')');
+    if( (element.getBoundingClientRect().top) < document.body.clientHeight){
+        name = "visibleText";
+        arr = element.className.split(" ");
+        if (arr.indexOf(name) == -1) {
+        element.className += " " + name;
+        }
     }
 }
 

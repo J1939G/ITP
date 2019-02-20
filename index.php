@@ -36,7 +36,11 @@
 			<a href="stories/"><?php echo $row['linkC'] ?></a>
 			<a href="contact.php<?php echo $langFlag ?>"><?php echo $row['linkD'] ?></a>
 			<div id="background">
-				<img src="assets/images/home-background.jpg" alt="photography of snowy forest"/>
+				<img src="assets/images/home-backgroundM.jpg" alt="photography of snowy forest"
+					 srcset="	assets/images/home-backgroundS.jpg 1450w,
+					 			assets/images/home-backgroundM.jpg 1940w,
+								assets/images/home-backgroundL.jpg 3200w"	
+				/>
 			</div>	
 		</div>
 	</body>
