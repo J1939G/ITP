@@ -9,6 +9,14 @@ body {
   border: 0px;
   font-family: SSPB, sans-serif;
 }
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 #navigation {
   font-size: 1rem;
   transition: all 0.6s ease-in-out;
@@ -133,7 +141,7 @@ body {
   src: url("../fonts/SSPR.ttf");
 }
 #content {
-  margin-top: 5rem;
+  margin-top: 7rem;
   font-size: 1em;
 }
 #content .contact {
@@ -181,8 +189,12 @@ body {
 }
 #content p img {
   position: relative;
-  width: 70%;
-  padding: 15%;
+  width: 33%;
+  padding: 2em;
+  float: left;
+  padding-top: 0em;
+  padding-bottom: 1em;
+  padding-left: 1em;
 }
 #content #copyright {
   grid-area: cr;
@@ -220,15 +232,14 @@ body {
   }
   #content {
     width: 60%;
-    margin-top: 5rem;
     margin-left: 25%;
     padding-left: 3rem;
     padding-top: 3rem;
     margin-right: auto;
   }
-  #content img {
+  #content p img {
     position: relative;
-    width: 40%;
+    width: 25%;
     display: block;
     float: left;
     padding-right: 1.5em;

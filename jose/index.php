@@ -36,6 +36,7 @@
             </p>
             <a href="../stories<?php echo $langFlag ?>"><?php echo $row['linkE'] ?></a>
             <a href="../contact<?php echo $langFlag ?>"><?php echo $row['linkF'] ?></a>
+            <a href="../<?php echo $langFlag ?>"><?php echo $row['home']?></a>
         </div>
     </div>
     <div id="content">

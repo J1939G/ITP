@@ -201,7 +201,7 @@ img {
   font-size: 1.5rem;
   opacity: 0;
   background-color: white;
-  padding-top: 6rem;
+  padding-top: 7rem;
   animation: fadein 1.5s 1s forwards;
 }
 #container div:nth-child(2) p {
@@ -345,7 +345,7 @@ img {
   }
   #container div:nth-child(1) {
     display: block;
-    margin-top: 5rem;
+    margin-top: 8rem;
     grid-area: greetText;
   }
   #container div:nth-child(2) {
@@ -495,7 +495,7 @@ img {
     width: 92%;
     margin: 0px auto;
     max-width: 1500px;
-    margin-top: 5em;
+    margin-top: 7em;
     grid-template-areas: "greetText greetText greetText" "firstText imageA imageA" "imageB secondText imageC" "thirdText thirdText thirdText" "lastImage lastImage lastImage" "cr cr cr";
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4vw;
@@ -591,5 +591,8 @@ img {
   }
   #container div:nth-child(9) {
     grid-area: cr;
+  }
+  #container #copyright {
+    margin-bottom: 4rem;
   }
 }

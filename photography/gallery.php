@@ -21,12 +21,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/styles/gallery.css">
-    <?php if($row['cat'] == 'nature') { echo "<link rel='stylesheet' href='../../assets/styles/nature.css'";} ?>
+    <?php if($row['cat'] == 'nature') { echo "<link rel='stylesheet' href='../../assets/styles/nature.css'>";} ?>
     <title><?php echo $row['name']?></title>
     <link rel="shortcut icon" href="../../assets/images/camera.ico">
     <script src="../../assets/scripts/gallery.js"></script>
 </head>
-<body >
+<body>
     <div id="navigation">
             <h1 id="title" style="background-image: url(../../assets/images/<?php echo $category ?>/<?php echo $category ?>_header.jpg);"><?php echo $row['name']?></h1>
             <div onclick="menu('menu')" id="arrow"></div>

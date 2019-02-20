@@ -14,6 +14,7 @@ function scrollFunction() {
     }
     makeAppear(5);
     makeAppear(7);
+    scroll();
 }
 
 function makeAppear( child) {
@@ -28,6 +29,9 @@ function makeAppear( child) {
     }
 }
 
+function scroll(){
+    document.querySelector("#container div:nth-child(3)").scrollTo(document.body.scrollTop/4,0);
+}
 
 function menu(id){
     item = document.getElementById(id);
