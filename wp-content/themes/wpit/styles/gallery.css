@@ -1,0 +1,598 @@
+@font-face {
+  font-family: SSPB;
+  src: url("../fonts/SSPB.ttf");
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  border: 0px;
+  font-family: SSPB, sans-serif;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#navigation {
+  font-size: 1rem;
+  transition: all 0.6s ease-in-out;
+  position: fixed;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  z-index: 5;
+  flex-wrap: wrap;
+  background-color: white;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+#navigation #title {
+  background-image: url(../images/jose/jose_header.jpg);
+  z-index: 10;
+  flex-basis: 100%;
+  font-size: 4em;
+  overflow: hidden;
+  line-height: 1.24em;
+  margin: 0px;
+}
+#navigation #arrow {
+  position: absolute;
+  z-index: 12;
+  font-size: 1rem;
+  top: 0em;
+  right: 0em;
+  width: 5em;
+  height: 5em;
+  background-image: url("../images/menu_arrow.svg");
+  background-size: 5em;
+  display: block;
+  transition: all 0.6s ease-in-out;
+}
+#navigation #menu {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  background-color: white;
+  height: 0;
+  transition: all 0.8s ease-in-out;
+}
+#navigation #menu a,
+#navigation #menu p {
+  flex-basis: 80%;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 4.8rem;
+  color: black;
+}
+#navigation #menu p {
+  margin: 0px;
+  margin-top: 1.2rem;
+  height: 4.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
+}
+#navigation #menu p a {
+  flex-basis: 100%;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+#navigation #menu p:hover {
+  height: 16rem;
+}
+@media only screen and (max-aspect-ratio: 3/4) {
+  #menu {
+    background-image: none !important;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) {
+  #navigation #arrow {
+    left: 0px;
+    right: auto;
+    transform: rotate(270deg);
+  }
+  #navigation #menu {
+    position: fixed;
+    height: 100%;
+    transform: translateX(-100%);
+    width: 50%;
+    background-image: url(../images/jose/jose_header.jpg);
+    background-attachment: fixed;
+  }
+  #navigation #menu p {
+    margin-top: 6rem;
+    height: 12rem !important;
+  }
+  #navigation #menu p,
+  #navigation #menu a {
+    font-size: 2rem;
+    line-height: 4rem;
+    height: 4rem;
+    transition: all 0.4s ease-in-out;
+  }
+  #navigation #menu p a {
+    font-size: 1.5rem;
+    line-height: 1em;
+    height: 1em;
+  }
+  #navigation #menu a:hover {
+    transform: scale(1.2);
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  #navigation #menu {
+    width: 25%;
+  }
+}
+@font-face {
+  font-family: SSPR;
+  src: url("../fonts/SSPR.ttf");
+}
+img {
+  pointer-events: none !important;
+}
+.text_style {
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+}
+.text_style p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+.visibleText {
+  animation: fadein 2s 0.5s forwards;
+  transform: scale(1);
+}
+#container {
+  width: 100%;
+  margin: 0px;
+  display: grid;
+  grid-template-areas: "greetText greetText" "greeter greeter" "leftT rightT" "center center" "bottom bottom" "closing closing" "cr cr";
+  grid-template-columns: 50vw 50vw;
+  grid-row-gap: 2rem;
+}
+#container img {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+}
+#container div:nth-child(1) {
+  animation: fadein 1.5s 1.5s forwards;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  display: none;
+}
+#container div:nth-child(1) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#container div:nth-child(2) {
+  grid-area: greetText;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  padding-top: 7rem;
+  animation: fadein 1.5s 1s forwards;
+}
+#container div:nth-child(2) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#container div:nth-child(3) {
+  grid-area: greeter;
+}
+#container div:nth-child(5) {
+  align-self: center;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  padding-left: 2rem;
+}
+#container div:nth-child(5) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#container div:nth-child(5) p {
+  margin: 0px;
+}
+#container div:nth-child(6) {
+  grid-area: center;
+}
+#container div:nth-child(7) {
+  grid-area: bottom;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+}
+#container div:nth-child(7) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#container div:nth-child(7) p {
+  margin: 0px;
+}
+#container div:nth-child(8) {
+  grid-area: closing;
+}
+#container #copyright {
+  grid-area: cr;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  opacity: 1;
+  font-size: 1rem;
+}
+#container #copyright p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#container #copyright a {
+  color: black;
+  flex-basis: auto;
+  display: inline-block;
+}
+#container #copyright a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+#container #copyright p {
+  flex-basis: auto;
+  display: inline-block;
+  transform: scale(1);
+  color: black;
+}
+.text_style_mid {
+  padding: 0px;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+}
+.text_style_mid p {
+  font-family: SSPR;
+  font-weight: 800;
+  max-width: 60vw;
+  margin: 0px auto;
+  padding: 0px;
+  letter-spacing: 1px;
+  transform: scale(0.8);
+  color: black;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+.text_style_mid {
+  padding: 0px;
+  line-height: 1.8em;
+  font-size: 1.5rem;
+  background-color: white;
+}
+.text_style_mid p {
+  font-family: SSPR;
+  font-weight: 800;
+  max-width: 60vw;
+  margin: 0px auto;
+  padding: 0px;
+  letter-spacing: 1px;
+  transform: scale(0.8);
+  color: black;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
+  #container {
+    width: 90vw;
+    margin: 0px auto;
+    grid-row-gap: 5vw;
+    padding: 0px;
+    grid-template-columns: 45vw 45vw;
+  }
+  #container div:nth-child(1) {
+    display: block;
+    margin-top: 8rem;
+    grid-area: greetText;
+  }
+  #container div:nth-child(2) {
+    display: none;
+  }
+  #container div:nth-child(3) {
+    overflow: hidden;
+  }
+  #container div:nth-child(3) img {
+    margin-bottom: -7vh;
+  }
+  #container div:nth-child(5) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 5vw;
+  }
+  #container div:nth-child(5) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(5) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(6) {
+    overflow: hidden;
+    grid-column: 2;
+    grid-row: 5;
+    position: relative;
+    height: 40vw;
+  }
+  #container div:nth-child(6) img {
+    height: 40vw;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  #container div:nth-child(7) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    align-self: center;
+    text-align: right;
+    padding: 0px 5vw;
+    grid-column: 1;
+    grid-row: 5;
+  }
+  #container div:nth-child(7) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(7) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container div:nth-child(8) {
+    position: relative;
+    height: 45vw;
+    overflow: hidden;
+  }
+  #container div:nth-child(8) img {
+    position: absolute;
+    top: -10vw;
+  }
+  #container #copyright {
+    line-height: 2rem;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1em;
+    padding: 0px;
+    justify-items: space-around;
+  }
+  #container #copyright p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container #copyright p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #container #copyright p {
+    margin: 0px;
+    color: black;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  .text_style_full {
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+  }
+  #container {
+    width: 92%;
+    margin: 0px auto;
+    max-width: 1500px;
+    margin-top: 7em;
+    grid-template-areas: "greetText greetText greetText" "firstText imageA imageA" "imageB secondText imageC" "thirdText thirdText thirdText" "lastImage lastImage lastImage" "cr cr cr";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4vw;
+  }
+  #container div:nth-child(2) {
+    grid-area: greetText;
+    align-self: center;
+    justify-self: center;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    margin-top: 4vw;
+  }
+  #container div:nth-child(1) {
+    grid-area: firstText;
+    display: block;
+    font-family: SSPR;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    text-align: right;
+    padding: 0px;
+    font-weight: 800;
+    align-self: center;
+  }
+  #container div:nth-child(3) {
+    grid-area: imageA;
+    overflow: hidden;
+  }
+  #container div:nth-child(3) img {
+    margin-bottom: -12vh;
+    position: relative;
+    width: 100%;
+  }
+  #container div:nth-child(4) {
+    grid-area: imageB;
+    overflow: hidden;
+  }
+  #container div:nth-child(4) img {
+    position: relative;
+    width: 100%;
+  }
+  #container div:nth-child(5) {
+    grid-area: secondText;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+  }
+  #container div:nth-child(6) {
+    grid-area: imageC;
+    overflow: hidden;
+  }
+  #container div:nth-child(6) img {
+    position: relative;
+    right: 50%;
+    width: auto;
+    height: 100%;
+  }
+  #container div:nth-child(7) {
+    grid-area: thirdText;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    justify-self: center;
+  }
+  #container div:nth-child(7) br {
+    display: none;
+  }
+  #container div:nth-child(8) {
+    grid-area: lastImage;
+    overflow: hidden;
+  }
+  #container div:nth-child(8) img {
+    width: 100%;
+    margin-top: -12%;
+    margin-bottom: -10%;
+  }
+  #container div:nth-child(9) {
+    grid-area: cr;
+  }
+  #container #copyright {
+    margin-bottom: 4rem;
+  }
+}

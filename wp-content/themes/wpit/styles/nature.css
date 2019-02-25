@@ -1,0 +1,8 @@
+#container div:nth-child(3) {
+  overflow-x: scroll;
+  height: 35vw;
+}
+#container div:nth-child(3) img {
+  height: 100%;
+  width: auto;
+}
