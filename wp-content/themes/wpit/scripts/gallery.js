@@ -19,7 +19,7 @@ function scrollFunction() {
 
 function makeAppear( child) {
     var element, name, arr;
-    element = document.querySelector('#container div:nth-child(' + child + ')');
+    element = document.querySelector('#content div:nth-child(' + child + ')');
     if( (element.getBoundingClientRect().top) < document.body.clientHeight){
         name = "visibleText";
         arr = element.className.split(" ");
@@ -30,7 +30,7 @@ function makeAppear( child) {
 }
 
 function scroll(){
-    document.querySelector("#container div:nth-child(3)").scrollTo(document.body.scrollTop/4,0);
+    document.querySelector("#content div:nth-child(3)").scrollTo(document.body.scrollTop/4,0);
 }
 
 function menu(id){
