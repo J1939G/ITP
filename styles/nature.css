@@ -1,8 +1,8 @@
-#container div:nth-child(3) {
+#content div:nth-child(5) {
   overflow-x: scroll;
   height: 35vw;
 }
-#container div:nth-child(3) img {
+#content div:nth-child(5) img {
   height: 100%;
   width: auto;
 }

@@ -3,8 +3,9 @@
 <head>
     <meta charset="<?php bloginfo('charset')?>" />
     <title><?php bloginfo('name') ?></title>
-    <?php if( $pagename == 'jose'): echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/jose.css" />'; endif;?>
+    <?php if( $pagename == 'jose' || $pagename == 'kontakt'): echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/jose.css" />'; endif;?>
     <?php if( get_page_template_slug() == 'gallery.php'): echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/gallery.css" />'; endif;?>
+    <?php if( $pagename == 'priroda'): echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/nature.css" />'; endif;?>
     <?php if( get_page_template_slug() == 'gallery.php'): echo '<script src="' . get_stylesheet_directory_uri() . '/scripts/gallery.js" ></script>'; endif;?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if( $pagename == 'jose'): echo '<script src="' . get_stylesheet_directory_uri() . '/scripts/jose.js" ></script>'; endif; ?>

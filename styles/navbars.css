@@ -60,11 +60,17 @@
   margin: 0px;
   padding: 0px;
 }
+#navigation .menu-page-container #menu-item-29:hover {
+  transform: none;
+}
 #navigation .menu-page-container ul {
   padding: 0px;
 }
 #navigation .menu-page-container ul ul li a {
-  font-size: 80% !important;
+  font-size: 1.5rem !important;
+  height: 1.5em;
+  line-height: 1.5em;
+  display: block;
 }
 #navigation .menu-page-container li,
 #navigation .menu-page-container p {
@@ -131,9 +137,6 @@
     width: 80%;
     margin: 0px auto;
     margin-top: 8rem;
-  }
-  #navigation .menu-page-container #menu-item-29:hover {
-    transform: none;
   }
   #navigation .menu-page-container li {
     width: auto;
