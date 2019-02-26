@@ -1,0 +1,656 @@
+@font-face {
+  font-family: SSPB;
+  src: url("../fonts/SSPB.ttf");
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  border: 0px;
+  font-family: SSPB, sans-serif;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#navigation {
+  font-size: 1rem;
+  transition: all 0.6s ease-in-out;
+  position: fixed;
+  text-align: center;
+  height: auto;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  z-index: 5;
+  flex-wrap: wrap;
+  background-color: white;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+#navigation #title {
+  background-image: url(../images/jose/jose_header.jpg);
+  z-index: 10;
+  flex-basis: 100%;
+  font-size: 4em;
+  height: 1.25em;
+  overflow: hidden;
+  line-height: 1.25em;
+  margin: 0px;
+  opacity: 1;
+  animation: none;
+}
+#navigation #arrow {
+  position: absolute;
+  z-index: 12;
+  font-size: 1rem;
+  top: 0em;
+  right: 0em;
+  width: 5em;
+  height: 5em;
+  background-image: url("../images/menu_arrow.svg");
+  background-size: 5em;
+  display: block;
+  transition: all 0.6s ease-in-out;
+}
+#navigation .menu-page-container {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  background-color: white;
+  height: 0;
+  transition: all 0.8s ease-in-out;
+}
+#navigation .menu-page-container .menu {
+  transform: translateX(0%) !important;
+  padding: 0px;
+}
+#navigation .menu-page-container .menu .current-menu-item {
+  display: none;
+}
+#navigation .menu-page-container .menu .submenu {
+  margin: 0px;
+  padding: 0px;
+}
+#navigation .menu-page-container ul {
+  padding: 0px;
+}
+#navigation .menu-page-container ul ul li a {
+  font-size: 80% !important;
+}
+#navigation .menu-page-container li,
+#navigation .menu-page-container p {
+  flex-basis: 80%;
+  font-size: 2.4rem;
+  font-weight: 800;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  color: black;
+}
+#navigation .menu-page-container li {
+  list-style-type: none;
+  height: auto;
+  transition: 0.4s all ease-in-out;
+}
+#navigation .menu-page-container li:hover {
+  transform: scale(1.2);
+}
+#navigation .menu-page-container li a {
+  color: black;
+  text-decoration: none;
+}
+#navigation .menu-page-container p {
+  margin: 0px;
+  margin-top: 1.2rem;
+  height: 4.8rem;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
+}
+#navigation .menu-page-container p a {
+  flex-basis: 100%;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+#navigation .menu-page-container p:hover {
+  height: 16rem;
+}
+@media only screen and (max-aspect-ratio: 3/4) {
+  .menu-page-container {
+    background-image: none !important;
+  }
+  .menu-page-container .menu {
+    margin-top: 0px;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/4) {
+  #navigation #arrow {
+    left: 0px;
+    right: auto;
+    transform: rotate(270deg);
+  }
+  #navigation .menu-page-container {
+    position: fixed;
+    height: 100%;
+    width: 50%;
+    transform: translateX(-100%);
+    background-attachment: fixed;
+  }
+  #navigation .menu-page-container .menu {
+    width: 80%;
+    margin: 0px auto;
+    margin-top: 8rem;
+  }
+  #navigation .menu-page-container #menu-item-29:hover {
+    transform: none;
+  }
+  #navigation .menu-page-container li {
+    width: auto;
+  }
+  #navigation .menu-page-container li ul li {
+    height: 3rem;
+  }
+  #navigation .menu-page-container li ul li a {
+    font-size: 1.5rem !important;
+    line-height: 3rem;
+    vertical-align: top;
+  }
+  #navigation .menu-page-container li ul li a:hover {
+    transform: scale(1);
+  }
+  #navigation .menu-page-container p {
+    margin-top: 6rem;
+    height: 12rem !important;
+  }
+  #navigation .menu-page-container p,
+  #navigation .menu-page-container a {
+    font-size: 2rem;
+    line-height: 4rem;
+    height: 4rem;
+    transition: all 0.4s ease-in-out;
+  }
+  #navigation .menu-page-container p a {
+    font-size: 1.5rem;
+    line-height: 1em;
+    height: 1em;
+  }
+  #navigation .menu-page-container a:hover {
+    transform: scale(1.2);
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  #navigation .menu-page-container,
+  #navigation .menu-start-container {
+    width: 25%;
+  }
+}
+@font-face {
+  font-family: SSPR;
+  src: url("../fonts/SSPR.ttf");
+}
+img {
+  pointer-events: none !important;
+}
+.text_style {
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+}
+.text_style p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+.visibleText {
+  animation: fadein 2s 0.5s forwards;
+  transform: scale(1);
+}
+#content {
+  width: 100%;
+  margin: 0px;
+  display: grid;
+  grid-template-areas: "greetText greetText" "greeter greeter" "leftT rightT" "center center" "bottom bottom" "closing closing" "cr cr";
+  grid-template-columns: 50vw 50vw;
+  grid-row-gap: 2rem;
+}
+#content img {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+}
+#content div:nth-child(1) {
+  animation: fadein 1.5s 1.5s forwards;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  display: none;
+}
+#content div:nth-child(1) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#content div:nth-child(2) {
+  grid-area: greetText;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  padding-top: 7rem;
+  animation: fadein 1.5s 1s forwards;
+}
+#content div:nth-child(2) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#content div:nth-child(3) {
+  grid-area: greeter;
+}
+#content div:nth-child(5) {
+  align-self: center;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  padding-left: 2rem;
+}
+#content div:nth-child(5) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#content div:nth-child(5) p {
+  margin: 0px;
+}
+#content div:nth-child(6) {
+  grid-area: center;
+}
+#content div:nth-child(7) {
+  grid-area: bottom;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+}
+#content div:nth-child(7) p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#content div:nth-child(7) p {
+  margin: 0px;
+}
+#content div:nth-child(8) {
+  grid-area: closing;
+}
+#content #copyright {
+  grid-area: cr;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 3rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  opacity: 0;
+  background-color: white;
+  opacity: 1;
+  font-size: 1rem;
+}
+#content #copyright p {
+  font-family: SSPR;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0px;
+  transform: scale(0.8);
+  margin: 0px;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+#content #copyright a {
+  color: black;
+  flex-basis: auto;
+  display: inline-block;
+}
+#content #copyright a:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+#content #copyright p {
+  flex-basis: auto;
+  display: inline-block;
+  transform: scale(1);
+  color: black;
+}
+.text_style_mid {
+  padding: 0px;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+}
+.text_style_mid p {
+  font-family: SSPR;
+  font-weight: 800;
+  max-width: 60vw;
+  margin: 0px auto;
+  padding: 0px;
+  letter-spacing: 1px;
+  transform: scale(0.8);
+  color: black;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+.text_style_mid {
+  padding: 0px;
+  line-height: 1.8em;
+  font-size: 1.5rem;
+  background-color: white;
+}
+.text_style_mid p {
+  font-family: SSPR;
+  font-weight: 800;
+  max-width: 60vw;
+  margin: 0px auto;
+  padding: 0px;
+  letter-spacing: 1px;
+  transform: scale(0.8);
+  color: black;
+  transition: all 1.5s ease-in-out 0.8s;
+}
+@media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
+  #content {
+    width: 90vw;
+    margin: 0px auto;
+    grid-row-gap: 5vw;
+    padding: 0px;
+    grid-template-columns: 45vw 45vw;
+  }
+  #content div:nth-child(1) {
+    display: block;
+    margin-top: 8rem;
+    grid-area: greetText;
+  }
+  #content div:nth-child(2) {
+    display: none;
+  }
+  #content div:nth-child(3) {
+    overflow: hidden;
+  }
+  #content div:nth-child(3) img {
+    margin-bottom: -7vh;
+  }
+  #content div:nth-child(5) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    padding: 5vw;
+  }
+  #content div:nth-child(5) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #content div:nth-child(5) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #content div:nth-child(6) {
+    overflow: hidden;
+    grid-column: 2;
+    grid-row: 5;
+    position: relative;
+    height: 40vw;
+  }
+  #content div:nth-child(6) img {
+    height: 40vw;
+    width: auto;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  #content div:nth-child(7) {
+    line-height: 2rem;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    align-self: center;
+    text-align: right;
+    padding: 0px 5vw;
+    grid-column: 1;
+    grid-row: 5;
+  }
+  #content div:nth-child(7) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #content div:nth-child(7) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #content div:nth-child(8) {
+    position: relative;
+    height: 45vw;
+    overflow: hidden;
+  }
+  #content div:nth-child(8) img {
+    position: absolute;
+    top: -10vw;
+  }
+  #content #copyright {
+    line-height: 2rem;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1em;
+    padding: 0px;
+    justify-items: space-around;
+  }
+  #content #copyright p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #content #copyright p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
+  }
+  #content #copyright p {
+    margin: 0px;
+    color: black;
+  }
+}
+@media only screen and (min-aspect-ratio: 3/2) {
+  .text_style_full {
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+  }
+  #content {
+    width: 92%;
+    margin: 0px auto;
+    max-width: 1500px;
+    margin-top: 7em;
+    grid-template-areas: "greetText greetText greetText" "firstText imageA imageA" "imageB secondText imageC" "thirdText thirdText thirdText" "lastImage lastImage lastImage" "cr cr cr";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4vw;
+  }
+  #content div:nth-child(2) {
+    grid-area: greetText;
+    align-self: center;
+    justify-self: center;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    margin-top: 4vw;
+  }
+  #content div:nth-child(1) {
+    grid-area: firstText;
+    display: block;
+    font-family: SSPR;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    text-align: right;
+    padding: 0px;
+    font-weight: 800;
+    align-self: center;
+  }
+  #content div:nth-child(3) {
+    grid-area: imageA;
+    overflow: hidden;
+  }
+  #content div:nth-child(3) img {
+    margin-bottom: -12vh;
+    position: relative;
+    width: 100%;
+  }
+  #content div:nth-child(4) {
+    grid-area: imageB;
+    overflow: hidden;
+  }
+  #content div:nth-child(4) img {
+    position: relative;
+    width: 100%;
+  }
+  #content div:nth-child(5) {
+    grid-area: secondText;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+  }
+  #content div:nth-child(6) {
+    grid-area: imageC;
+    overflow: hidden;
+  }
+  #content div:nth-child(6) img {
+    position: relative;
+    right: 50%;
+    width: auto;
+    height: 100%;
+  }
+  #content div:nth-child(7) {
+    grid-area: thirdText;
+    padding: 0px 4vw;
+    text-align: center;
+    line-height: 1.7em;
+    box-shadow: none;
+    font-size: 2em;
+    word-spacing: 3px;
+    max-width: 60vw;
+    justify-self: center;
+  }
+  #content div:nth-child(7) br {
+    display: none;
+  }
+  #content div:nth-child(8) {
+    grid-area: lastImage;
+    overflow: hidden;
+  }
+  #content div:nth-child(8) img {
+    width: 100%;
+    margin-top: -12%;
+    margin-bottom: -10%;
+  }
+  #content div:nth-child(9) {
+    grid-area: cr;
+  }
+  #content #copyright {
+    margin-bottom: 4rem;
+  }
+}
