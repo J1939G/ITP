@@ -2,6 +2,5 @@
 
 IT Project (Codename: <i>Pittsburg</i>)
 
-My personal photography portfolio, temporarily available at http://josesmutny.mypressonline.com
-
+My personal photography portfolio, temporarily available at http://smutny.pro
 MIT license, © 2019 José Smutný
