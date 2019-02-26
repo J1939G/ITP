@@ -2,6 +2,5 @@
 
 IT Project (Codename: Pittsburg)
 
-My personal photography portfolio, temporarily available at https://josesmutny.000webhostapp.com
-
+My personal photography portfolio, temporarily available at http://josesmutny.mypressonline.com
 MIT license, (c) 2019 Jose Smutny
