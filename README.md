@@ -1,6 +1,6 @@
 # IT Project
 
-IT Project (Codename: Pittsburg)
+IT Project (Codename: <i>Pittsburg</i>)
 
 My personal photography portfolio, temporarily available at http://josesmutny.mypressonline.com
 
