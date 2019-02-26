@@ -79,11 +79,17 @@ body {
   margin: 0px;
   padding: 0px;
 }
+#navigation .menu-page-container #menu-item-29:hover {
+  transform: none;
+}
 #navigation .menu-page-container ul {
   padding: 0px;
 }
 #navigation .menu-page-container ul ul li a {
-  font-size: 80% !important;
+  font-size: 1.5rem !important;
+  height: 1.5em;
+  line-height: 1.5em;
+  display: block;
 }
 #navigation .menu-page-container li,
 #navigation .menu-page-container p {
@@ -150,9 +156,6 @@ body {
     width: 80%;
     margin: 0px auto;
     margin-top: 8rem;
-  }
-  #navigation .menu-page-container #menu-item-29:hover {
-    transform: none;
   }
   #navigation .menu-page-container li {
     width: auto;
@@ -225,6 +228,7 @@ img {
   width: 100%;
   margin: 0px;
   display: grid;
+  overflow-x: hidden;
   grid-template-areas: "greetText greetText" "greeter greeter" "leftT rightT" "center center" "bottom bottom" "closing closing" "cr cr";
   grid-template-columns: 50vw 50vw;
   grid-row-gap: 2rem;
@@ -271,19 +275,23 @@ img {
   margin: 0px;
   transition: all 1.5s ease-in-out 0.8s;
 }
-#content div:nth-child(3) {
+#content div:nth-child(5) {
   grid-area: greeter;
 }
-#content div:nth-child(5) {
+#content div:nth-child(6) {
+  grid-area: leftT;
+}
+#content div:nth-child(3) {
   align-self: center;
   padding: 0px 3rem;
   line-height: 2rem;
   font-size: 1.5rem;
   opacity: 0;
   background-color: white;
+  grid-area: rightT;
   padding-left: 2rem;
 }
-#content div:nth-child(5) p {
+#content div:nth-child(3) p {
   font-family: SSPR;
   font-weight: 800;
   letter-spacing: 1px;
@@ -292,13 +300,14 @@ img {
   margin: 0px;
   transition: all 1.5s ease-in-out 0.8s;
 }
-#content div:nth-child(5) p {
+#content div:nth-child(3) p {
+  text-align: left;
   margin: 0px;
 }
-#content div:nth-child(6) {
+#content div:nth-child(7) {
   grid-area: center;
 }
-#content div:nth-child(7) {
+#content div:nth-child(4) {
   grid-area: bottom;
   padding: 0px 3rem;
   line-height: 2rem;
@@ -306,7 +315,7 @@ img {
   opacity: 0;
   background-color: white;
 }
-#content div:nth-child(7) p {
+#content div:nth-child(4) p {
   font-family: SSPR;
   font-weight: 800;
   letter-spacing: 1px;
@@ -315,16 +324,20 @@ img {
   margin: 0px;
   transition: all 1.5s ease-in-out 0.8s;
 }
-#content div:nth-child(7) p {
+#content div:nth-child(4) p {
+  text-align: center;
   margin: 0px;
 }
 #content div:nth-child(8) {
   grid-area: closing;
+  width: 100%;
+  overflow: hidden;
 }
 #content #copyright {
   grid-area: cr;
   display: flex;
-  margin-bottom: 2rem;
+  padding-top: 0px !important;
+  margin-bottom: 2rem !important;
   justify-content: space-around;
   align-items: center;
   padding: 0px 3rem;
@@ -359,22 +372,8 @@ img {
   transform: scale(1);
   color: black;
 }
-.text_style_mid {
-  padding: 0px;
-  line-height: 2rem;
-  font-size: 1.5rem;
-  background-color: white;
-}
-.text_style_mid p {
-  font-family: SSPR;
-  font-weight: 800;
-  max-width: 60vw;
-  margin: 0px auto;
-  padding: 0px;
-  letter-spacing: 1px;
-  transform: scale(0.8);
-  color: black;
-  transition: all 1.5s ease-in-out 0.8s;
+#content #zoom {
+  display: none;
 }
 .text_style_mid {
   padding: 0px;
@@ -395,35 +394,50 @@ img {
 }
 @media only screen and (min-aspect-ratio: 3/4) and (max-aspect-ratio: 3/2) {
   #content {
+    grid-template-areas: "greetText greetText" "greeter greeter" "leftT rightT" "center center" "closing closing" "cr cr";
     width: 90vw;
     margin: 0px auto;
     grid-row-gap: 5vw;
     padding: 0px;
     grid-template-columns: 45vw 45vw;
   }
-  #content div:nth-child(1) {
-    display: block;
-    margin-top: 8rem;
-    grid-area: greetText;
-  }
   #content div:nth-child(2) {
     display: none;
   }
-  #content div:nth-child(3) {
-    overflow: hidden;
+  #content div:nth-child(1) {
+    display: block;
+    padding: 0px;
+    line-height: 1.8em;
+    font-size: 1.5rem;
+    background-color: white;
+    padding-top: 7rem;
+    grid-area: greetText;
   }
-  #content div:nth-child(3) img {
-    margin-bottom: -7vh;
+  #content div:nth-child(1) p {
+    font-family: SSPR;
+    font-weight: 800;
+    max-width: 60vw;
+    margin: 0px auto;
+    padding: 0px;
+    letter-spacing: 1px;
+    transform: scale(0.8);
+    color: black;
+    transition: all 1.5s ease-in-out 0.8s;
   }
   #content div:nth-child(5) {
-    line-height: 2rem;
+    overflow: hidden;
+  }
+  #content div:nth-child(5) img {
+    margin-bottom: -7vh;
+  }
+  #content div:nth-child(3) {
     padding: 0px;
     line-height: 1.8em;
     font-size: 1.5rem;
     background-color: white;
     padding: 5vw;
   }
-  #content div:nth-child(5) p {
+  #content div:nth-child(3) p {
     font-family: SSPR;
     font-weight: 800;
     max-width: 60vw;
@@ -434,33 +448,21 @@ img {
     color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
-  #content div:nth-child(5) p {
-    font-family: SSPR;
-    font-weight: 800;
-    max-width: 60vw;
-    margin: 0px auto;
-    padding: 0px;
-    letter-spacing: 1px;
-    transform: scale(0.8);
-    color: black;
-    transition: all 1.5s ease-in-out 0.8s;
-  }
-  #content div:nth-child(6) {
+  #content div:nth-child(7) {
     overflow: hidden;
     grid-column: 2;
-    grid-row: 5;
+    grid-row: 4;
     position: relative;
     height: 40vw;
   }
-  #content div:nth-child(6) img {
+  #content div:nth-child(7) img {
     height: 40vw;
     width: auto;
     position: absolute;
     right: 0px;
     top: 0px;
   }
-  #content div:nth-child(7) {
-    line-height: 2rem;
+  #content div:nth-child(4) {
     padding: 0px;
     line-height: 1.8em;
     font-size: 1.5rem;
@@ -469,9 +471,9 @@ img {
     text-align: right;
     padding: 0px 5vw;
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 4;
   }
-  #content div:nth-child(7) p {
+  #content div:nth-child(4) p {
     font-family: SSPR;
     font-weight: 800;
     max-width: 60vw;
@@ -482,16 +484,8 @@ img {
     color: black;
     transition: all 1.5s ease-in-out 0.8s;
   }
-  #content div:nth-child(7) p {
-    font-family: SSPR;
-    font-weight: 800;
-    max-width: 60vw;
-    margin: 0px auto;
-    padding: 0px;
-    letter-spacing: 1px;
-    transform: scale(0.8);
-    color: black;
-    transition: all 1.5s ease-in-out 0.8s;
+  #content div:nth-child(4) p {
+    text-align: right;
   }
   #content div:nth-child(8) {
     position: relative;
@@ -503,7 +497,6 @@ img {
     top: -10vw;
   }
   #content #copyright {
-    line-height: 2rem;
     line-height: 1.8em;
     font-size: 1.5rem;
     background-color: white;
@@ -511,17 +504,6 @@ img {
     font-size: 1em;
     padding: 0px;
     justify-items: space-around;
-  }
-  #content #copyright p {
-    font-family: SSPR;
-    font-weight: 800;
-    max-width: 60vw;
-    margin: 0px auto;
-    padding: 0px;
-    letter-spacing: 1px;
-    transform: scale(0.8);
-    color: black;
-    transition: all 1.5s ease-in-out 0.8s;
   }
   #content #copyright p {
     font-family: SSPR;
@@ -553,14 +535,15 @@ img {
     width: 92%;
     margin: 0px auto;
     max-width: 1500px;
-    margin-top: 7em;
+    margin-top: 5em;
     grid-template-areas: "greetText greetText greetText" "firstText imageA imageA" "imageB secondText imageC" "thirdText thirdText thirdText" "lastImage lastImage lastImage" "cr cr cr";
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4vw;
   }
-  #content div:nth-child(2) {
+  #content div:nth-child(1) {
     grid-area: greetText;
     align-self: center;
+    display: block;
     justify-self: center;
     padding: 0px 4vw;
     text-align: center;
@@ -571,9 +554,8 @@ img {
     max-width: 60vw;
     margin-top: 4vw;
   }
-  #content div:nth-child(1) {
+  #content div:nth-child(2) {
     grid-area: firstText;
-    display: block;
     font-family: SSPR;
     padding: 0px 4vw;
     text-align: center;
@@ -587,24 +569,25 @@ img {
     font-weight: 800;
     align-self: center;
   }
-  #content div:nth-child(3) {
+  #content div:nth-child(5) {
     grid-area: imageA;
     overflow: hidden;
   }
-  #content div:nth-child(3) img {
+  #content div:nth-child(5) img {
     margin-bottom: -12vh;
     position: relative;
     width: 100%;
   }
-  #content div:nth-child(4) {
+  #content div:nth-child(6) {
     grid-area: imageB;
     overflow: hidden;
+    height: 60vh;
   }
-  #content div:nth-child(4) img {
+  #content div:nth-child(6) img {
     position: relative;
-    width: 100%;
+    height: 100%;
   }
-  #content div:nth-child(5) {
+  #content div:nth-child(3) {
     grid-area: secondText;
     padding: 0px 4vw;
     text-align: center;
@@ -614,17 +597,19 @@ img {
     word-spacing: 3px;
     max-width: 60vw;
   }
-  #content div:nth-child(6) {
+  #content div:nth-child(7) {
     grid-area: imageC;
     overflow: hidden;
-  }
-  #content div:nth-child(6) img {
     position: relative;
-    right: 50%;
+    height: 60vh;
+  }
+  #content div:nth-child(7) img {
+    position: absolute;
+    right: 0px;
     width: auto;
     height: 100%;
   }
-  #content div:nth-child(7) {
+  #content div:nth-child(4) {
     grid-area: thirdText;
     padding: 0px 4vw;
     text-align: center;
@@ -635,7 +620,7 @@ img {
     max-width: 60vw;
     justify-self: center;
   }
-  #content div:nth-child(7) br {
+  #content div:nth-child(4) br {
     display: none;
   }
   #content div:nth-child(8) {
@@ -647,10 +632,15 @@ img {
     margin-top: -12%;
     margin-bottom: -10%;
   }
-  #content div:nth-child(9) {
+  #content #copyright {
+    margin-bottom: 3rem !important;
     grid-area: cr;
   }
-  #content #copyright {
-    margin-bottom: 4rem;
+  #content #zoom {
+    height: 25vw;
+    width: 25vw;
+    display: block;
+    position: fixed;
+    background-color: gray;
   }
 }

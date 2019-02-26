@@ -5,6 +5,7 @@ function gebi(id){
 }
 
 function scrollFunction() {
+    scroll();
     if( document.body.scrollTop  > 5 || document.documentElement.scrollTop > 5 ){
         gebi('navigation').fontSize = "0.5em";
         gebi('arrow').fontSize = "0.5rem";
@@ -12,9 +13,8 @@ function scrollFunction() {
         gebi('navigation').fontSize = "1em";
         gebi('arrow').fontSize = "1rem";
     }
-    makeAppear(5);
-    makeAppear(7);
-    scroll();
+    makeAppear(3);
+    makeAppear(4);
 }
 
 function makeAppear( child) {
@@ -30,7 +30,13 @@ function makeAppear( child) {
 }
 
 function scroll(){
-    document.querySelector("#content div:nth-child(3)").scrollTo(document.body.scrollTop/4,0);
+    scrolledIMG = document.querySelector("#content div:nth-child(5)");
+    if( document.body.scrollTop == '0'){ 
+        scrolledIMG.scrollTo(document.documentElement.scrollTop/4,0);
+    }
+    else {
+        scrolledIMG.scrollTo(document.documentElement.scrollTop/4,0);
+    }
 }
 
 function menu(Class){
