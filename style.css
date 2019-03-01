@@ -15,6 +15,17 @@ body {
   border: 0px;
   font-family: SSPB, sans-serif;
 }
+h1,
+h2,
+h3 {
+  font-weight: 100;
+  margin: 0px;
+  padding: 0px;
+}
+p {
+  margin: 0px;
+  padding: 0px;
+}
 @keyframes fadein {
   from {
     opacity: 0;
