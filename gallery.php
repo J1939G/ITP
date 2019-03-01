@@ -13,7 +13,6 @@
                 endwhile;
         endif;
 ?>
-
     <div><img src="<?php echo $assets . "AM.jpg\" alt='First image'" ?>"
             srcset="	<?php echo $assets . "AS.jpg 1450w"?>,
                         <?php echo $assets . "AM.jpg 1940w"?>,
