@@ -11,6 +11,7 @@ register_nav_menus(array(
     'page' => __('Page menu')
 ));
 
+add_theme_support( 'post-thumbnails' ); 
 add_filter('show_admin_bar', '__return_false');
 
 ?>
