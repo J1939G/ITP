@@ -15,8 +15,9 @@ function scrollFunction() {
 }
 function menu(id){
     item = document.getElementsByClassName(id)[0];
-    aspectRatio = window.innerWidth/window.innerHeight;
-    if( aspectRatio < 3/4) {
+    aspectRatioMax = window.matchMedia("(max-aspect-ratio: 4/5)");
+
+    if( aspectRatioMax.matches) {
         item.style.transform = "translateX(0%)";
         if( item.style.height != (window.innerHeight + 'px') ){
             item.style.height = (window.innerHeight + 'px');
@@ -29,7 +30,7 @@ function menu(id){
             gebi('arrow').transform = "inherit";
         }
     }
-    else if( aspectRatio > 3/4 && aspectRatio < 3/2){
+    else if(window.matchMedia("(min-aspect-ratio: 4/5)").matches && window.matchMedia("(max-aspect-ratio: 3/2)").matches){
         item.style.height = "100%";
         if( item.style.transform != "translateX(0%)" ){
             item.style.transform = "translateX(0%)";

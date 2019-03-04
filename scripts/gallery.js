@@ -46,10 +46,11 @@ function scroll(){
     }
 }
 
+aspectRatioMax = window.matchMedia("(max-aspect-ratio: 4/5)");
+
 function menu(Class){
     item = document.getElementsByClassName(Class)[0];
-    aspectRatio = window.innerWidth/window.innerHeight;
-    if( aspectRatio < 3/4) {
+    if( aspectRatioMax.matches ) {
         item.style.transform = "translateX(0%)";
         if( item.style.height != (window.innerHeight + 'px') ){
             item.style.height = (window.innerHeight + 'px');
@@ -62,7 +63,7 @@ function menu(Class){
             gebi('arrow').transform = "inherit";
         }
     }
-    else if( aspectRatio >= 3/4){
+    else {
         item.style.height = "100%";
         if( item.style.transform != "translateX(0%)" ){
             gebi('arrow').fontSize = "1em";
