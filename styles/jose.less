@@ -1,4 +1,5 @@
 @import url('navbars.less');
+@import url('fixed-navbars.less');
 
 @font-face {
     font-family: SSPR;
@@ -131,15 +132,7 @@
     }
 }
 
-@media only screen and ( min-aspect-ratio: 4/3) {
-    #navigation {
-        #arrow {
-            display: none;
-        }
-        #menu {
-            transform: translateX(0%) !important;
-        }
-    }
+@media only screen and ( min-aspect-ratio: 5/4) {
     #content {
         margin-top: 9rem;
         width: 60%;
@@ -152,16 +145,6 @@
             font-weight: 800;
             }
             padding-top: 10em;
-        }
-    }
-}
-
-
-@media only screen and (min-aspect-ratio: 3/2) {
-    #navigation {
-        .menu-page-container {
-            width: 100%/4;
-            transform: translateX(0%) !important;
         }
     }
 }

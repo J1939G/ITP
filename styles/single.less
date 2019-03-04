@@ -1,0 +1,150 @@
+@import url('page.less');
+
+@font-face {
+    font-family: SSPR;
+    src: url("../fonts/SSPR.ttf")
+}
+
+#content {
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap;
+    position: relative;
+    h2 {
+        font-size: 5rem;
+        height: auto;
+        line-height: 6rem;
+        max-width: 16.5em;
+        margin: 0px auto;
+        margin-bottom: 1rem;
+        flex-basis: 100%;
+        display: block;
+        padding: 0px 0.5em;
+    }
+    div {
+        position: relative;
+        flex-basis: 100%;
+        display: block;
+        img {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+    }
+    p {
+        flex-basis: 100%;
+        font-size: 1.2em;
+        max-width: 40em;
+        font-weight: 600;
+        margin: 1em auto;
+        line-height: 1.8em;
+        font-family: SSPR;
+        padding: 0px 0.5em;
+    }
+    #pageNav {
+        margin: 0px 2.4rem;
+        font-size: 2.5em;
+        text-align: center;
+        font-weight: 800;
+        font-family: SSPB;
+        a {
+            color: black;
+            margin: 0px;
+            transition: 0.4s all ease-in-out;
+        }
+        a:hover {
+            transform: scale(1.2);
+        }
+    }
+    #copyright {
+        grid-area: cr;
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.5rem;
+        a {
+            color: black;
+            flex-basis: auto;
+            display: inline-block;
+        }
+        a:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
+        }
+        p {
+            flex-basis: auto;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0px;
+            padding: 0px;
+            letter-spacing: 1px;
+            display: inline-block;
+            transform: scale(1);
+            color: black;
+        }
+    }
+}
+
+
+@media only screen and ( min-aspect-ratio: 4/3) and ( max-aspect-ratio: 3/2) {
+    #content {
+        h2 {
+            padding: 0px 1em;
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+        div {
+            flex-basis: 75%;
+            margin: 0px auto;
+        }
+        #copyright {
+            padding-top: 10em;
+            a {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 1rem;
+                padding: 0px;
+                font-weight: 800;
+            }
+        }
+        #pageNav {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+@media only screen and ( min-aspect-ratio: 3/2) {
+    #content {
+        h2 {
+            font-size: 3rem;
+            line-height: 4rem;
+            padding: 0px 1em;
+        }
+        div {
+            flex-basis: 60%;
+            margin: 0px auto;
+        }
+        p {
+            padding: 0px 2em;
+        }
+        #copyright {
+            padding-top: 0em;
+            a {
+                font-size: 1rem;
+            }
+            p {
+                font-size: 1rem;
+            padding: 0px;
+            font-weight: 800;
+            }
+        }
+        #pageNav {
+            font-size: 1.5rem;
+        }
+    }
+}

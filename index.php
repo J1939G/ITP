@@ -8,7 +8,7 @@
     <div class="post">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             <?php the_content('číst dál', TRUE); ?>
-            <?php the_post_thumbnail(); ?>
+            <div class="thumb"><?php the_post_thumbnail(); ?></div>
     </div>
 
         <?php
