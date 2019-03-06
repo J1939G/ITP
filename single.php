@@ -3,7 +3,6 @@
 <head>
     <meta charset="<?php bloginfo('charset')?>" />
     <title><?php bloginfo('name') ?></title><?php
-    
     echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/single.css" />';
     the_post();
     ?>
