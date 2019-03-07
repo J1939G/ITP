@@ -12,10 +12,24 @@ function scrollFunction() {
         gebi('arrow').fontSize = "1rem";
     }
 }
+
+function portrait() {
+    var images = document.querySelectorAll('.thumb img');
+
+    images.forEach(function(element) {
+        if( element.width <= element.height){
+            element.style.width = '50%';
+            element.style.display = 'block';
+            element.style.margin = 'auto';
+        }
+  });
+}
+
 function menu(Class){
     item = document.getElementsByClassName(Class)[0];
-    aspectRatio = window.innerWidth/window.innerHeight;
-    if( aspectRatio < 3/4) {
+    aspectRatioMax = window.matchMedia("(max-aspect-ratio: 4/5)");
+
+    if( aspectRatioMax.matches) {
         item.style.transform = "translateX(0%)";
         if( item.style.height != (window.innerHeight + 'px') ){
             item.style.height = (window.innerHeight + 'px');
@@ -28,11 +42,9 @@ function menu(Class){
             gebi('arrow').transform = "inherit";
         }
     }
-    else if( aspectRatio >= 3/4){
+    else if(window.matchMedia("(min-aspect-ratio: 4/5)").matches && window.matchMedia("(max-aspect-ratio: 3/2)").matches){
         item.style.height = "100%";
         if( item.style.transform != "translateX(0%)" ){
-            gebi('arrow').fontSize = "1em";
-            gebi('navigation').fontSize = "1em";
             item.style.transform = "translateX(0%)";
             gebi('arrow').transform = "rotate(90deg)";
         } else {

@@ -14,7 +14,6 @@
             <?php the_content('číst dál', TRUE); ?>
             <div class="thumb"><?php the_post_thumbnail('large'); ?></div>
     </div>
-
         <?php
         endwhile;
     endif;
