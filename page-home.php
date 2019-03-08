@@ -39,7 +39,5 @@ $args = array(
         />
     </div>	
 </div>
-
-<?php
-    get_footer();
-?>
+</body>
+</html>
