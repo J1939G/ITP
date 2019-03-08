@@ -13,7 +13,7 @@
 </head>
 <body <?php if( $pagename == 'pribehy'){echo 'onload="portrait()"';}; ?>>
     <nav id="navigation">
-    <h1 id="title" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/headers/<?php echo $pagename ?>_header.jpg);"><?php echo wp_title(""); ?></h1>
+        <h1 id="title" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/headers/<?php echo $pagename ?>_header.jpg);"><?php echo wp_title(""); ?></h1>
         <div onclick="menu('menu-page-container')" id="arrow"></div>
         <?php wp_nav_menu(array('theme_location' => 'page')); ?>
     </nav>
