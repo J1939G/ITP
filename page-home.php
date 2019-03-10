@@ -1,3 +1,4 @@
+<?php /* Template name: Home*/ ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -36,7 +37,14 @@ $args = array(
 );
 
 ?>
+<div id='languageSwitcher'><?php 
+    $langs = pll_the_languages(array('raw' => 1));
+    foreach ( $langs as $lang){
+        if( $lang[current_lang]){continue;};
+        echo '<a href=' . $lang[url] . ' style="background-image:url(\'' . get_stylesheet_directory_uri() . '/images/' . $lang[slug] . '.svg\')"; ></a>';
+    }
 
+?></div>
 <div id="content">
     <h1 onclick="changer(this.id)" id="title">José Smutný</h1>
     <?php wp_nav_menu($args); ?>

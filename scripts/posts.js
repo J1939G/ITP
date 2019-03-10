@@ -1,5 +1,5 @@
 window.onscroll = function() {scrollFunction()};
-window.onresize = function() {menu('menu-page-container');menu('menu-page-container');};
+window.onresize = function() {menu('#navigation div');menu('#navigation div');};
 function gebi(id){
     return document.getElementById(id).style;
 }
@@ -25,8 +25,8 @@ function portrait() {
   });
 }
 
-function menu(Class){
-    item = document.getElementsByClassName(Class)[0];
+function menu(query){
+    item = document.querySelector(query);
     aspectRatioMax = window.matchMedia("(max-aspect-ratio: 4/5)");
 
     if( aspectRatioMax.matches) {

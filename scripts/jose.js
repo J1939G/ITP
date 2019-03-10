@@ -1,5 +1,5 @@
 window.onscroll = function() {scrollFunction()};
-window.onresize = function() {menu('menu'); menu('menu');}
+window.onresize = function() {menu('#navigation div'); menu('#navigation div');}
 
 function gebi(id){
     return document.getElementById(id).style;
@@ -13,8 +13,8 @@ function scrollFunction() {
         gebi('arrow').fontSize = "1rem";
     }
 }
-function menu(id){
-    item = document.getElementsByClassName(id)[0];
+function menu(query){
+    item = document.querySelector(query);
     aspectRatioMax = window.matchMedia("(max-aspect-ratio: 4/5)");
 
     if( aspectRatioMax.matches) {

@@ -4,7 +4,7 @@
 *
 * @package pittsburg
 */
-        $assets = get_stylesheet_directory_uri() . '/images/' . $pagename . '/';
+        $assets = get_stylesheet_directory_uri() . '/images/' . get_post_meta($post->ID, 'Source', true) . '/';
 
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/gallery.css" />';
         echo '<script src="' . get_stylesheet_directory_uri() . '/scripts/gallery.js" ></script>';

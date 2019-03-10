@@ -1,7 +1,8 @@
 <?php 
 
+/* Template name: Photography*/
 $assets = get_stylesheet_directory_uri() . '/images/';
-
+the_post();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@ $assets = get_stylesheet_directory_uri() . '/images/';
 </head>
 <body>
 	<div id="container">
-		<div id="first" class="cat"><a href="portrety/">Portréty</a>
+		<div id="first" class="cat"><a href="portrety/"><?php echo get_post_meta($post->ID, 'People', true); ?></a>
 			<picture>
 				<source srcset="<?php echo $assets . "people" ?>S.jpg 1450w,
                             	<?php echo $assets . "people" ?>M.jpg 1940w,
@@ -28,7 +29,7 @@ $assets = get_stylesheet_directory_uri() . '/images/';
 				<img src="<?php echo $assets . "people" ?>M.jpg" alt="Pohled na obličej" />
 			</picture>
 		</div>
-		<div id="second" class="cat"><a href="priroda/">Příroda</a>
+		<div id="second" class="cat"><a href="priroda/"><?php echo get_post_meta($post->ID, 'Nature', true); ?></a>
 			<picture>
 				<source srcset="<?php echo $assets . "nature" ?>S.jpg 1450w,
                             	<?php echo $assets . "nature" ?>M.jpg 1940w,
@@ -45,7 +46,7 @@ $assets = get_stylesheet_directory_uri() . '/images/';
 				<img src="<?php echo $assets . "nature" ?>M.jpg" alt="Snněžený les" />
 			</picture>
 		</div>
-		<div id="third" class="cat"><a href="sport/">Sport</a>
+		<div id="third" class="cat"><a href="sport/"><?php echo get_post_meta($post->ID, 'Sport', true); ?></a>
 			<picture>
 				<source srcset="<?php echo $assets . "sport" ?>S.jpg 1450w,
                             	<?php echo $assets . "sport" ?>M.jpg 1940w,

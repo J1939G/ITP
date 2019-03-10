@@ -1,4 +1,6 @@
 <?php 
+
+/* Template name: Dates*/
     echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/styles/posts.css" />';
     echo '<script src="' . get_stylesheet_directory_uri() . '/scripts/posts.js" ></script>';
     get_header();
