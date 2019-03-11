@@ -12,7 +12,7 @@ the_post();
 </head>
 <body>
 	<div id="container">
-		<div id="first" class="cat"><a href="portrety/"><?php echo get_post_meta($post->ID, 'People', true); ?></a>
+		<div id="first" class="cat"><a href="architecture/"><?php echo get_post_meta($post->ID, 'Static', true); ?></a>
 			<picture>
 				<source srcset="<?php echo $assets . "people" ?>S.jpg 1450w,
                             	<?php echo $assets . "people" ?>M.jpg 1940w,
